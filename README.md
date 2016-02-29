@@ -1,7 +1,7 @@
 HTM
-Èlanovi Tima:
+ÄŒlanovi Tima:
 
-1. Muamer Purišiæ
-2. Haris Paliæ
-3. Tarik Pašaliæ
-4. Adnan Omeroviæ
+1. Muamer PuriÅ¡iÄ‡
+2. Haris PaliÄ‡
+3. Tarik PaÅ¡aliÄ‡
+4. Adnan OmeroviÄ‡

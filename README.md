@@ -1,5 +1,5 @@
 HTM
-Članovi Tima:
+Članovi Tima: 
 
 1. Muamer Purišić
 2. Haris Palić

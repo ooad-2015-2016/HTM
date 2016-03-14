@@ -75,8 +75,6 @@ Akteri:
 
 4.	Dobavljač (uvid liste za nabavku opreme)
 
-5.	Računovođa (unos i pregled podataka koji se tiču finansijskog dijela)
-
-6.	Recepcionist
+5.	Recepcionist
 
 

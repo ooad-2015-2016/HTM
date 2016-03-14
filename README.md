@@ -66,10 +66,15 @@ Funkcionalnosti:
 
 Akteri:
 1.	Administrator (Ima pristup bazi podataka)
+
 2.	Doktor/Stomatolog (Uvid u sve (svoje) termine i izmjenu istih, uvid u karton pacijenta, izdavanje recepata, te izmjenu stavki na listi za nabavku opreme)
+
 3.	Pacijent (uvid u svoj karton, termine kao i zahtjev za zakazivanje/otkazivanje termina te pregled cjenovnika)
+
 4.	Dobavljač (uvid liste za nabavku opreme)
+
 5.	Računovođa (unos i pregled podataka koji se tiču finansijskog dijela)
+
 6.	Recepcionist
 
 

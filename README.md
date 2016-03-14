@@ -8,15 +8,15 @@
 
 Opis teme
 
-Svi smo upoznati sa manjkavostima zdravstvenog sistema i ordinacija u nasoj drzavi kao sto su trosenje dragocionog vremena, loša organizacija zdravstvenih usluga koje vode do gubljenja podataka i losoj atmosferi na radnom mjestu. 
+Svi smo upoznati sa manjkavostima zdravstvenog sistema i ordinacija u nasoj drzavi kao sto su trosenje dragocjenog vremena, loša organizacija zdravstvenih usluga koje vode do gubljenja podataka i losoj atmosferi na radnom mjestu. 
 Upravo zato se javlja potreba za našom aplikacijom, koja u ovom slucaju se direktno odnosi na organizaciju jedne stomatoloske ordinacije.
 
-Cilj aplikacije je ubrzati proces rezervacije termina pacijenata, olaksati uvid u sve prethodne preglede i nalaze, korektnost redova cekanja, omogucavanje fiksnog cjenovnika popravke zuba i drugih usluga.
+Cilj aplikacije je ubrzati proces rezervacije termina pacijenata, olaksati uvid u sve prethodne preglede i nalaze, korektnost redova cekanja, omogucavanje fiksnog cjenovnika usluga.
 Stomatolog dobija potpun pristup svim prijašnjim pregledima i nalazima i time se smanjuje mogucnost gubitka podataka
 te je sam pacijent bolje organizovan dolaskom na pregled znajuci da su svi nalazi i izvještaji o pregledima sabrani na jedno mjesto.
-cijene koje se odreduju za odredjene zdravstvene usluge su fiksne i time je omogucen profesionalniji odnos stomatologa prema pacijentima.
-pacijentima se omogucuje besplatna rezervacije time stede vrijeme i novac, dok stomatolozi time dobijaju bolji uvid o broju pacijenata i kapacitetima koje moraju ispuniti.
-"Ja sam bio prije njega uredu", "Nije on sad na redu ja sam prije predao knjizicu"- svi smo culi ove recenice ranije i one sada mogu poslati proslost. Online rezervacijom svi pacijenit imaju uvid kada su na redu i kod kojeg stomatologa.
+Cijene koje se odreduju za odredjene zdravstvene usluge su fiksne i time je omogucen profesionalniji odnos stomatologa prema pacijentima.
+Pacijentima se omogucuju rezervacije te time stede vrijeme, dok stomatolozi time dobijaju bolji uvid o broju pacijenata i kapacitetima koje moraju ispuniti.
+"Ja sam bio prije njega u redu", "Nije on sad na redu ja sam prije predao knjizicu"- svi smo culi ove recenice ranije i one sada mogu poslati proslost. Online rezervacijom svi pacijenti imaju uvid kada su na redu i kod kojeg stomatologa.
 To pomaze stomatologu da odrzava organizaciju svoje ordinacije i pruzi sto je moguce bolju uslugu sa svojim timom.
 
 Procesi:
@@ -65,6 +65,7 @@ Funkcionalnosti:
 
 
 Akteri:
+
 1.	Administrator (Ima pristup bazi podataka)
 
 2.	Doktor/Stomatolog (Uvid u sve (svoje) termine i izmjenu istih, uvid u karton pacijenta, izdavanje recepata, te izmjenu stavki na listi za nabavku opreme)

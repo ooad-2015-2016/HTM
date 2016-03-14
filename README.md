@@ -6,7 +6,8 @@
 3. Tarik Pašalić
 4. Adnan Omerović
 
-Opis teme
+
+#Opis teme
 
 Svi smo upoznati sa manjkavostima zdravstvenog sistema i ordinacija u nasoj drzavi kao sto su trosenje dragocjenog vremena, loša organizacija zdravstvenih usluga koje vode do gubljenja podataka i losoj atmosferi na radnom mjestu. 
 Upravo zato se javlja potreba za našom aplikacijom, koja u ovom slucaju se direktno odnosi na organizaciju jedne stomatoloske ordinacije.

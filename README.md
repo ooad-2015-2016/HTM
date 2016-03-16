@@ -50,31 +50,16 @@ Računovođa pregleda transakcije.
 
 
 Funkcionalnosti:
-●	Mogućnost kreiranja računa
-●	Odabir stomatologa
-●	Zakazivanje/otkazivanje termina
-●	Uvid u sve termine
-●	Uvid u karton
-●	Prikaz grafikona zuba
-●	Pregled cjenovnika
-●	Ažuriranje cjenovnika
-●	Omogućenje popusta na osnovu statusa pacijenta
-●	Izdavanje recepata
-●	Dodavanje/skidanje stavki na listu za nabavku opreme
-●	Uvid u sve transakcije (nabavka robe i pacijenti)
-
-
+*Rezervacije termina
+*Popis opreme
+*Automatsko ažuriranje liste za nabavku opreme
+*Uvid u kartone pacijenata
+*Popust na osnovu statusa pacijenta
 
 Akteri:
-
-1.	Administrator (Ima pristup bazi podataka)
-
-2.	Doktor/Stomatolog (Uvid u sve (svoje) termine i izmjenu istih, uvid u karton pacijenta, izdavanje recepata, te izmjenu stavki na listi za nabavku opreme)
-
-3.	Pacijent (uvid u svoj karton, termine kao i zahtjev za zakazivanje/otkazivanje termina te pregled cjenovnika)
-
-4.	Dobavljač (uvid liste za nabavku opreme)
-
-5.	Recepcionist
+1. Administrator (registruje doktora i recepcionara)
+2. Doktor/Stomatolog (Uvid u sve (svoje) termine, uvid u karton svojih pacijenta, vrši unos opreme, nakon zahvata unosi u karton pacijenta šta je uradio)
+3. Pacijent (uvid u svoj karton, termine kao i zahtjev za zakazivanje/otkazivanje termina te pregled cjenovnika  sve preko mobilne aplikacije )
+4. Recepcionist ( registruje pacijenta, zakazuje termine, kontaktira dobavljača za opremu )
 
 

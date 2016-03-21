@@ -9,57 +9,34 @@
 #
 # Opis teme
 
-Svi smo upoznati sa manjkavostima zdravstvenog sistema i ordinacija u nasoj drzavi kao sto su trosenje dragocjenog vremena, loša organizacija zdravstvenih usluga koje vode do gubljenja podataka i losoj atmosferi na radnom mjestu. 
-Upravo zato se javlja potreba za našom aplikacijom, koja u ovom slucaju se direktno odnosi na organizaciju jedne stomatoloske ordinacije.
+Stomatološka ordinacija je aplikacija koja doktorima olakšava organizaciju unutar stomatološke ordinacije, smanjujući gubitak vremena na zakazivanje termina i pretragu podataka.
 
-Cilj aplikacije je ubrzati proces rezervacije termina pacijenata, olaksati uvid u sve prethodne preglede i nalaze, korektnost redova cekanja, omogucavanje fiksnog cjenovnika usluga.
-Stomatolog dobija potpun pristup svim prijašnjim pregledima i nalazima i time se smanjuje mogucnost gubitka podataka
-te je sam pacijent bolje organizovan dolaskom na pregled znajuci da su svi nalazi i izvještaji o pregledima sabrani na jedno mjesto.
-Cijene koje se odreduju za odredjene zdravstvene usluge su fiksne i time je omogucen profesionalniji odnos stomatologa prema pacijentima.
-Pacijentima se omogucuju rezervacije te time stede vrijeme, dok stomatolozi time dobijaju bolji uvid o broju pacijenata i kapacitetima koje moraju ispuniti.
-"Ja sam bio prije njega u redu", "Nije on sad na redu ja sam prije predao knjizicu"- svi smo culi ove recenice ranije i one sada mogu poslati proslost. Online rezervacijom svi pacijenti imaju uvid kada su na redu i kod kojeg stomatologa.
-To pomaze stomatologu da odrzava organizaciju svoje ordinacije i pruzi sto je moguce bolju uslugu sa svojim timom.
-
-Procesi:
-
-Registracija:
-
-Administrator vrši kreiranje računa za korisnike. Prilikom registracije korisnika (stomatolog, recepcionist, dobavljač i računovođa), administrator vrši provjeru datih podataka.
-Recepcionista vrši registraciju pacijenata.
-
-Korištenje aplikacije:
-
-Stomatolog prilikom prijave može odabrati listu pacijenata te uvid u svakog pacijenta zasebno. Može odabrati i uvid u svoje termine.
-Vrši pregled pacijenta i na osnovu izvršenih poduhvata unosi podatke.
-Stomatolog naručuje potrebnu robu za ordinaciju, te se naručene stavke stavljaju na listu za nabavku. Nakon dobavljanja naručene robe, ona se skida s liste, dok računovođa unosi podatke o izvršenoj nabavci.
-
-Pacijent vrši odabir stomatologa te dobija na uvid stanje raspoloživih termina, i zatim odabira željeni termin. Ukoliko dođe do potrebe za promjenom termina, pacijent vrši otkazivanje termina te zakazivanje istog. 
-Pacijent odabirom cjenovnika dobija isti na uvid.
-
-Računovođa ima pristup cjenovniku i može isti da modifikuje. Vrši naplatu.
-
-Dobavljač ima pristup listi za nabavku opreme.
-
-Pregled detalja:
-
-Administrator može pregledati sve detalje koji su pohranjeni u bazu podataka (uposlenike, transakcije, termine itd).
-Stomatolog pregleda sve svoje termine, kao i kartone svojih pacijenata.
-Pacijent pregleda svoj karton i svoje termine.
-Dobavljač pregleda listu za nabavku opreme.
-Računovođa pregleda transakcije.
+Cilj aplikacije je minimizirati proces čekanja bržim zakazivanjem termina, olakšati uvid u sve prethodne zahvate nad pacijentom te jednostavniji pregled podataka. Mobilna verzija ove aplikacije namjenjena je isključivo pacijentima. Time je maksimalno olakšano zakazivanje/otkazivanje termina te uvid u neke osnovne stvari  svoga kartona (Detaljniji karton pacijent može dobiti na recepciji).
 
 
-Funkcionalnosti:
-*Rezervacije termina
-*Popis opreme
-*Automatsko ažuriranje liste za nabavku opreme
-*Uvid u kartone pacijenata
-*Popust na osnovu statusa pacijenta
+# Procesi:
 
-Akteri:
-1. Administrator (registruje doktora i recepcionara)
-2. Doktor/Stomatolog (Uvid u sve (svoje) termine, uvid u karton svojih pacijenta, vrši unos opreme, nakon zahvata unosi u karton pacijenta šta je uradio)
-3. Pacijent (uvid u svoj karton, termine kao i zahtjev za zakazivanje/otkazivanje termina te pregled cjenovnika  sve preko mobilne aplikacije )
-4. Recepcionist ( registruje pacijenta, zakazuje termine, kontaktira dobavljača za opremu )
+#### Registracija:
+Administrator kreira račun za doktora/stomatologa i recepcionara.  Prilikom pacijentove prve posjete, registruje ga recepcionar i daje mu odgovarajući username i password ukoliko želi koristiti mobilnu aplikaciju. Pacijentu se prilikom registracije (ako je tako odabrano od strane stomatološke ordinacije) upisuje i određeni status (student, penzioner...) u svrhu mogućeg reduciranja cijena cjenovnika.
+#### Zakazivanje/otkazivanje termina:
+Recepcionar vrši izmjenu termina na zahtjev pacijenta. Pacijent može direktno zakazivati/otkazivati termin ako je korisnik mobilne aplikacije. Pacijent pored termina može birati odabrati i preferiranog stomatologa ukoliko je isti dostupan za taj termin. Stomatolog ima uvid u svoj raspored zakazanih termina.
+####Unos podataka:
+Stomatolog po izvršenom zahvatu nad pacijentom vrši određeni unos podataka u karton pacijenta. Prilikom unošenja, stomatologu je olakšano unošenje iskorištene opreme čija se lista automatski ažurira. Time recepcionar ima uvid u stanje opreme i može vršiti nabavku kad bude potrebno. Recepcionar vrši početni unos opreme. 
+####Pregled podataka:
+Pacijent ima pristup svojim podacima preko recepcionara. Dalje, može zatražiti ispis svog kartona. Ukoliko je korisnik mobilne aplikacije, pacijentu se omogućuje i manje detaljan uvid u svoj karton korištenjem mobilne aplikacije. Mobilna aplikacija omugućava pacijentu i pregled cjenovnika.
+Stomatolog ima pristup podacima svih pacijenata na kojima je on izvršio barem jedan zahvat. 
 
 
+
+# Funkcionalnosti:
+1.Rezervacije termina
+2.Popis opreme
+3.Automatsko ažuriranje liste za nabavku opreme
+4.Uvid u kartone pacijenata
+5.Popust na osnovu statusa pacijenta
+
+# Akteri:
+1.Administrator
+2.Doktor/Stomatolog 
+3.Pacijent
+4.Recepcionist

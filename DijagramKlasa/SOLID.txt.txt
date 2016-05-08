@@ -1,0 +1,30 @@
+1 Princip pojedinaène odgovornosti: KLASA BI TREBALA IMATI SAMO JEDAN RAZLOG ZA PROMJENU.
+Klasa Recepcionar nije ispoštovala ovu odgovornost, za svaku izmjenu u bazi termina zahtjevat ce izmjenu ove klase, takoðer ovo važi
+i za naèin registracije pacijenta, ukoliko bi u buduènosti dodali u bazu da se mora dodati tel. broj pacijenta morali bi modifikovat i ovu 
+klasu. Najbolje bi bilo da odvojimo ove dvije operacije npr. prebacimo IzmjenaTermina u novu klasu Termin na taj naèin æe biti zadovoljen princip
+pojedinaène odgovornosti.
+Klasa Pacijent takoðer nije ispoštovala ovu odgovornost,
+Operacije za termine u klasu Termin, operacije vezane za karton u klasu Izvjestaj, pregled cjenovnika u CjenovnikIzvještaj.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+2 -Otvoreno zatvoren princip ( eng. Open Closed Principle-OCP) glasi:
+ENTITETI SOFTVERA (KLASE, MODULI, FUNKCIJE) TREBALI BI BITI OTVORENI ZA
+NADOGRADNJU, ALI ZATVORENI ZA MODIFIKACIJE.
+U našem sluèaju ovaj princip je zadovoljen, svaka klasa sadrži osnovne informacije,
+izmjene u nekoj od klasa ne mogu forsirati izmjene u nekoj drugoj klasi.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+3. Liskov princip zamjene : PODTIPOVI MORAJU BITI ZAMJENJIVI NJIHOVIM OSNOVNIM TIPOVIMA.
+Klase Obièni pacijent, Penzioner, Student su izvedeni iz klase Pacijent i oni se mogu zamjeniti osnovnim tipom.
+Klase Admin, Recepcionar, Stomatolog su izvedene iz klase Osoblje takoðer se mogu zamijeniti osnovnim tipom
+Liscov princip neæe biti narušen.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+4.Princip inverzije ovisnosti:Princip inverzije ovisnosti (eng. Dependency Inversion Principle-DIP) glasi:
+A. MODULI VISOKOG NIVOA NE BI TREBALI OVISITI OD MODULA NISKOG NIVOA.
+OBA BI TREBALO DA OVISE OD APSTRAKCIJA.
+B. MODULI NE BI TREBALI OVISITI OD DETALJA. DETALJI BI TREBALI BITI OVISNI OD
+APSTRAKCIJA.
+- Apstraktne klase Osoblje, Pacijent ne ovise od drugih klasa, dok naravno neke druge ovise od njih. Pravilo je ispoštovano,
+sistem bi trebao biti manje osjetljiv na promjene.
+--------------------------------------------------------------------------------------------------------------------------------------
+5.Princip izoliranja interfejsa: KLIJENTI NE TREBA DA OVISE O METODAMA KOJE NEÆE UPOTREBLJAVATI
+Obzirom da nemamo nekih debelih klasa, ovaj princip je ispoštovan, mada tu u klasi Pacijent postoje neke metode koje mozda korisnik nece koristiti
+npr. ne zanima ga ispis kartona.

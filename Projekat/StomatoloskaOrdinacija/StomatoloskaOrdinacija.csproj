@@ -101,6 +101,20 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Cjenovnik.cs" />
+    <Compile Include="Model\Karton.cs" />
+    <Compile Include="Model\ObicniPacijent.cs" />
+    <Compile Include="Model\Oprema.cs" />
+    <Compile Include="Model\Osoba.cs" />
+    <Compile Include="Model\Osoblje.cs" />
+    <Compile Include="Model\Pacijent.cs" />
+    <Compile Include="Model\Penzioner.cs" />
+    <Compile Include="Model\Recepcionar.cs" />
+    <Compile Include="Model\Stomatolog.cs" />
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\Zahvat.cs" />
+    <Compile Include="Model\ZakazaniTermini.cs" />
+    <Compile Include="Model\ZakazivanjeTermina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
+    <Folder Include="View\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -8,13 +8,15 @@ namespace StomatoloskaOrdinacija.Model
 {
     class Recepcionar:Osoblje
     {
-        private string password;
-        public Recepcionar(string password, string imeRecepcionara, string prezimeRecepcionara, DateTime datumRodjenjaRecepcionara) : base(imeRecepcionara, prezimeRecepcionara, datumRodjenjaRecepcionara)
-        { this.password = password; }
-        //moguc interfejs za recepcionara...
-        public void RegistrujPacijenta() { }
-        public void IzmjenaTermina() { }
-        public void PristupMobilnojApp() { }
+
+        public Recepcionar(string username, string password, string imeRecepcionara, string prezimeRecepcionara, DateTime datumRodjenjaRecepcionara) : base(imeRecepcionara, prezimeRecepcionara, datumRodjenjaRecepcionara)
+        {
+            Username = username;
+            Password = password;
+        }
+        public Recepcionar() { }
+        private string Username { get; set; }
+        private string Password { get; set; }
 
     }
 }

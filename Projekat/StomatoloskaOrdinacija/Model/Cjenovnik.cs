@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace StomatoloskaOrdinacija.Model
 {
     class Cjenovnik
-    {
-        private Dictionary<string, int> cjenovnik;
+    { 
+        public Dictionary<string,int> ListaCjenovnika { get; set; }
         public Cjenovnik()
         {
-            cjenovnik = new Dictionary<string, int>();
+            ListaCjenovnika = new Dictionary<string, int>();
         }
     }
 }

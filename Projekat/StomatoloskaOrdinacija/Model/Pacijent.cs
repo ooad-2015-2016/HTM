@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,15 +9,12 @@ namespace StomatoloskaOrdinacija.Model
 {
     class Pacijent:Osoba
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int PacijentId { get; set; }
         public string StatusPacijenta { get; set; }
         public Pacijent(string imePacijenta, string prezimePacijenta, DateTime datumRodjenjaPacijenta) : base(imePacijenta, prezimePacijenta, datumRodjenjaPacijenta) { }
+        public Pacijent() { }
 
-        //moguc interfejs... poslije..
-        public void ZakaziTermin() { }
-        public void OtkaziTermin() { }
-        public void OdaberiStomatologa() { }
-        public void IspisKartona() { }
-        public void PregledKarotna() { }
-        public void PregledCjenovnika() { }
+
     }
 }

@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace StomatoloskaOrdinacija.Model
 {
-    class Stomatolog:Osoblje
+    class Admin:Osoblje
     {
-
-        public Stomatolog(string username, string password, string imeStomatologa, string prezimeStomatologa, DateTime datumRodjenjaStomatologa) : base(imeStomatologa, prezimeStomatologa, datumRodjenjaStomatologa)
+        public Admin(string username, string password, string imeAdmina, string prezimeAdmina, DateTime datumRodjenjaAdmina) : base(imeAdmina, prezimeAdmina, datumRodjenjaAdmina)
         {
             Username = username;
             Password = password;
         }
-        public Stomatolog() { }
-
+        public Admin() { }
         private string Username { get; set; }
         private string Password { get; set; }
+
     }
 }

@@ -8,6 +8,6 @@ namespace StomatoloskaOrdinacija.Model
 {
     class Karton
     {
-        private Zahvat
+        private Zahvat z;
     }
 }

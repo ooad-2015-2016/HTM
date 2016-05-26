@@ -20,6 +20,7 @@ namespace StomatoloskaOrdinacija.Model
             DatumRodjenja = datumRodjenja;
 
         }
+        public Osoba() { }
 
     }
 }

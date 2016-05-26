@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace StomatoloskaOrdinacija.Model
 {
-    class Osoblje:Osoba
+    class Osoblje : Osoba
     {
         public Osoblje(string imeOsoblja, string prezimeOsoblja, DateTime datumRodjenjaOsoblja) : base(imeOsoblja, prezimeOsoblja, datumRodjenjaOsoblja) { }
+        public Osoblje() { }
     }
 }

@@ -8,6 +8,10 @@ namespace StomatoloskaOrdinacija.Model
 {
     class Penzioner:Pacijent
     {
-        public Penzioner(string imePacijenta, string prezimePacijenta, DateTime datumRodjenjaPacijenta) : base(imePacijenta, prezimePacijenta, datumRodjenjaPacijenta) { }
+        public Penzioner(string imePacijenta, string prezimePacijenta, DateTime datumRodjenjaPacijenta) : base(imePacijenta, prezimePacijenta, datumRodjenjaPacijenta)
+        {
+            StatusPacijenta = "Penzioner";
+        }
+        public Penzioner() { }
     }
 }

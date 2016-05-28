@@ -12,13 +12,24 @@ namespace StomatoloskaOrdinacija.Model
     class OrdinacijaDBContext: DbContext
     {
         public DbSet<Pacijent> Pacijenti { get; set; }
+        public DbSet<Cjenovnik> Cjenovnici { get; set; }
+        public DbSet<Karton> Kartoni { get; set; }
+        public DbSet<Korisnik> Korisnici { get; set; }
+        public DbSet<Oprema> Opreme { get; set; }
+        public DbSet<Osoblje> MyProperty { get; set; }
+        public DbSet<Admin> Administratori { get; set; }
+        public DbSet<Recepcionar> Recepcionari { get; set; }
+        public DbSet<Stomatolog> Stomatolozi { get; set; }
+        public DbSet<ZakazaniTermin> ZakazaniTermini { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dataBaseFilePath = "Ordinacija.db";
+            string dataBaseFilePath = "Ordinacija1.db";
             try
             {
-                dataBaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, dataBaseFilePath);
+                dataBaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, dataBaseFilePath);
+
             }
             catch (InvalidOperationException) { }
 

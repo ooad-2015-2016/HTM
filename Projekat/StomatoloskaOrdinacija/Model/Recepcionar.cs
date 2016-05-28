@@ -14,7 +14,9 @@ namespace StomatoloskaOrdinacija.Model
             Username = username;
             Password = password;
         }
+
         public Recepcionar() { }
+        public int RecepcionarID { get; set; }
         private string Username { get; set; }
         private string Password { get; set; }
 

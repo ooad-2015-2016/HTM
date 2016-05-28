@@ -8,6 +8,7 @@ namespace StomatoloskaOrdinacija.Model
 {
     class Osoblje : Osoba
     {
+        public int OsobljeID { get; set; }
         public Osoblje(string imeOsoblja, string prezimeOsoblja, DateTime datumRodjenjaOsoblja) : base(imeOsoblja, prezimeOsoblja, datumRodjenjaOsoblja) { }
         public Osoblje() { }
     }

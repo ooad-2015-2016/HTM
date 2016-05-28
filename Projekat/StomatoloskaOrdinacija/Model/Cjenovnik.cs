@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,11 +8,11 @@ using System.Threading.Tasks;
 namespace StomatoloskaOrdinacija.Model
 {
     class Cjenovnik
-    { 
-        public Dictionary<string,int> ListaCjenovnika { get; set; }
-        public Cjenovnik()
-        {
-            ListaCjenovnika = new Dictionary<string, int>();
-        }
+    {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int CjenovnikID { get; set; }
+        public float Cijena { get; set; }
+        public string NazivUsluge { get; set; }
+
     }
 }

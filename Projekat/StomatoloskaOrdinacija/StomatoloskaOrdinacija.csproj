@@ -101,9 +101,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Migracija.cs" />
-    <Compile Include="Migrations\Migracija.designer.cs">
-      <DependentUpon>Migracija.cs</DependentUpon>
+    <Compile Include="Migrations\20160528204816_InitialMigration.cs" />
+    <Compile Include="Migrations\20160528204816_InitialMigration.designer.cs">
+      <DependentUpon>20160528204816_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\OrdinacijaDBContextModelSnapshot.cs" />
     <Compile Include="Model\Admin.cs" />
@@ -122,8 +122,7 @@
     <Compile Include="Model\Stomatolog.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Zahvat.cs" />
-    <Compile Include="Model\ZakazaniTermini.cs" />
-    <Compile Include="Model\ZakazivanjeTermina.cs" />
+    <Compile Include="Model\ZakazaniTermin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

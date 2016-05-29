@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StomatoloskaOrdinacija.Model
 {
-    class Zahvat
+    public class Zahvat
     {
         //stomatolog koji vrši zahvat
         //pacijent na kojem se izvršava zahvat

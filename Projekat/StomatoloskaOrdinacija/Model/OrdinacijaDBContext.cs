@@ -9,7 +9,7 @@ using Windows.Storage;
 
 namespace StomatoloskaOrdinacija.Model
 {
-    class OrdinacijaDBContext: DbContext
+    public class OrdinacijaDBContext: DbContext
     {
         public DbSet<Pacijent> Pacijenti { get; set; }
         public DbSet<Cjenovnik> Cjenovnici { get; set; }

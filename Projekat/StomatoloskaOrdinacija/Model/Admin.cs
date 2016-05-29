@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace StomatoloskaOrdinacija.Model
 {
-    class Admin:Osoblje
+   public class Admin:Osoblje
     {
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AdminID { get; set; }
-        private string Username { get; set; }
-        private string Password { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
         public Admin(string username, string password, string imeAdmina, string prezimeAdmina, DateTime datumRodjenjaAdmina) : base(imeAdmina, prezimeAdmina, datumRodjenjaAdmina)
         {
             Username = username;

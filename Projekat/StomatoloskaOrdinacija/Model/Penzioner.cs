@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StomatoloskaOrdinacija.Model
 {
-    class Penzioner:Pacijent
+    public class Penzioner:Pacijent
     {
         public Penzioner(string imePacijenta, string prezimePacijenta, DateTime datumRodjenjaPacijenta) : base(imePacijenta, prezimePacijenta, datumRodjenjaPacijenta)
         {

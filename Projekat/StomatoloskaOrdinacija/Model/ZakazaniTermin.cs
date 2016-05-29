@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StomatoloskaOrdinacija.Model
 {
-    class ZakazaniTermin
+    public class ZakazaniTermin
     {
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

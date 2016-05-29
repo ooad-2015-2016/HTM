@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StomatoloskaOrdinacija.Model
 {
-    class Recepcionar:Osoblje
+    public class Recepcionar:Osoblje
     {
 
         public Recepcionar(string username, string password, string imeRecepcionara, string prezimeRecepcionara, DateTime datumRodjenjaRecepcionara) : base(imeRecepcionara, prezimeRecepcionara, datumRodjenjaRecepcionara)
@@ -17,8 +17,8 @@ namespace StomatoloskaOrdinacija.Model
 
         public Recepcionar() { }
         public int RecepcionarID { get; set; }
-        private string Username { get; set; }
-        private string Password { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
     }
 }

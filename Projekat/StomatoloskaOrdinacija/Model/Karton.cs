@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StomatoloskaOrdinacija.Model
 {
-    class Karton
+    public class Karton
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int KartonID { get; set; }

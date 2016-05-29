@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StomatoloskaOrdinacija.Model
 {
-    class Oprema
+    public class Oprema
     {
         public int OpremaID { get; set; }
         public List<string> PopisOpreme { get; set; }

@@ -13,11 +13,11 @@ namespace StomatoloskaOrdinacija.Model
         {
             Username = username;
             Password = password;
+            TipOsoblja = "Stomatolog";
         }
         public Stomatolog() { }
 
         public int StomatologID { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        
     }
 }

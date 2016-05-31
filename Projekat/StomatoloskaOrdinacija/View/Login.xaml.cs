@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Data.Entity;
+using StomatoloskaOrdinacija.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,7 +26,8 @@ namespace StomatoloskaOrdinacija.View
     {
         public Login()
         {
-            this.InitializeComponent();
+            this.InitializeComponent();  
+
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

@@ -9,6 +9,9 @@ namespace StomatoloskaOrdinacija.Model
     public class Oprema
     {
         public int OpremaID { get; set; }
-        public List<string> PopisOpreme { get; set; }
+        public string Naziv { get; set; }
+        public int Kolicina { get; set; }
+
+        public Oprema() { }
     }
 }

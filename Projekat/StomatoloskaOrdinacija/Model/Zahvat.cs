@@ -17,6 +17,7 @@ namespace StomatoloskaOrdinacija.Model
         public int ZahvatID { get; set; }
         public string ImeIPrezimePacijenta { get; set; }
         public string ImeIPrezimeStomatologa { get; set; }
+        public DateTime DatumZahvata { get; set; }
 
         public void UnosZahvataUKarton() { }
     }

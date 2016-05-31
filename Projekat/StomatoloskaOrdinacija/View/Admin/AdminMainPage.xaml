@@ -7,7 +7,36 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0.65"/>
+                <GradientStop Color="#FF44162F" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <RelativePanel HorizontalAlignment="Center" Height="495" Margin="151,75,126,150" VerticalAlignment="Center" Width="1003">
+            <RelativePanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF290A2B" Offset="0"/>
+                    <GradientStop Color="#FFE6E6E6" Offset="1"/>
+                </LinearGradientBrush>
+            </RelativePanel.Background>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Margin="29,212,-108,-212"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Ime" VerticalAlignment="Top" Width="62" Margin="82,173,-82,-173"/>
+            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Margin="220,212,-299,-212"/>
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Prezime" VerticalAlignment="Top" Width="62" Margin="259,173,-259,-173" SelectionChanged="textBlock_Copy_SelectionChanged"/>
+            <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180" Margin="411,212,-520,-212"/>
+            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Margin="443,173,-504,-173" SelectionChanged="textBlock_Copy_SelectionChanged">
+            	<Run Text="Datum rođen"/>
+            	<Run Text="ja"/>
+            </TextBlock>
+            <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Margin="629,212,-708,-212"/>
+            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Margin="660,173,-721,-173" SelectionChanged="textBlock_Copy_SelectionChanged" Text="Username"/>
+            <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Margin="817,212,-896,-212"/>
+            <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Margin="853,173,-914,-173" SelectionChanged="textBlock_Copy_SelectionChanged" Text="Password"/>
+            <Button x:Name="button" Content="Registruj Stomatologa" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="200" Margin="198,353,-333,-353" Background="#33FFFFFF"/>
+            <Button x:Name="button1" Content="Registruj Recepcionara" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="251" Margin="512,353,-698,-353" Background="#33FFFFFF"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="83" TextWrapping="Wrap" Text="ADMIN" VerticalAlignment="Top" Width="214" Margin="392,36,-544,-99" FontSize="48" Foreground="{ThemeResource AppBarItemPointerOverBackgroundThemeBrush}"/>
+        </RelativePanel>
     </Grid>
 </Page>

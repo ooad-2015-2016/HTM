@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.Entity;
 using StomatoloskaOrdinacija.Model;
 using StomatoloskaOrdinacija.View;
+using StomatoloskaOrdinacija.View.Admin;
 using System;
 using System.Collections.Generic;
 using System.IO;

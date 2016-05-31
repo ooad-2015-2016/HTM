@@ -1,36 +1,100 @@
-﻿using System;
+﻿using StomatoloskaOrdinacija.Helper;
+using StomatoloskaOrdinacija.Model;
+using StomatoloskaOrdinacija.View;
+using StomatoloskaOrdinacija.View.Admin;
+using StomatoloskaOrdinacija.View.Recepcionar;
+using StomatoloskaOrdinacija.View.Stomatolog;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StomatoloskaOrdinacija.Model;
 using System.Windows.Input;
 using Windows.UI.Popups;
 
 namespace StomatoloskaOrdinacija.ViewModel
 {
-    class LoginVM
+    public class LoginVM:INotifyPropertyChanged
     {
-        //OrdinacijaDBContext context = new OrdinacijaDBContext();
-        //private void button_Click(object sender, RoutedEventArgs e)
-        //{
+        
+        private string username;
+        private string password;
+        public string Username
+        {
+            get { return username; }
+            set
+            {
+                username = value;
+                KadaSePromijeni("Username");
+            }
+        }
 
-        //}
-        public string Username  { get; set; }
-        public string Password { get; set; }
-        public ICommand Prijava { get; set; }
+        public string Password
+        {
+            get { return password; }
+            set
+            {
+                password = value;
+                KadaSePromijeni("Password");
+            }
+        }
+        public ICommand Prijavaa { get; set; }
+        public INavigationService NavigationService { get; set; }
+
         public LoginVM()
         {
-
+            NavigationService = new NavigationService();
+            Prijavaa=new RelayCommand<object>(LogujSe, MozeLiSeLogovati);
         }
-        public bool ImalKorisnika(string username, string password)
-        {
-            var context = new OrdinacijaDBContext();
-            var Admini= context.Administratori.ToList();
-            foreach (Admin tmpAdmin in Admini)
-                if (username.Equals(tmpAdmin.Username) && (password.Equals(tmpAdmin.Password))) return true;
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void KadaSePromijeni(string usernamePassword)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(usernamePassword));
+        }
+
+        public bool MozeLiSeLogovati(object parametar)
+        {
+            
+            if (parametar!=null)
+            {
+                var usernamePassword = parametar as String;
+                if (String.IsNullOrEmpty(usernamePassword)) return false;
+                return true;
+            }
             return false;
         }
+        public void LogujSe(object parametar)
+        {
+            //NavigationService.Navigate(typeof(AdminMainPage));
+
+            var context = new OrdinacijaDBContext();
+            var osoblje = context.Osobljee.ToList();
+            
+
+            foreach (Osoblje tmpOsoblje in osoblje)
+            if (username.Equals(tmpOsoblje.Username) && (password.Equals(tmpOsoblje.Password)))
+                {
+                    switch (tmpOsoblje.TipOsoblja)
+                    {
+                        case "Admin":
+                            NavigationService.Navigate(typeof(AdminMainPage));
+                            break;
+                        case "Stomatolog":
+                            NavigationService.Navigate(typeof(StomatologMainPage));
+                            break;
+                        case "Recepcionar":
+                            NavigationService.Navigate(typeof(RecepcionarMainPage));
+                            break;
+                        
+                    }
+                }
+
+             
+        }
+   
     }
 }

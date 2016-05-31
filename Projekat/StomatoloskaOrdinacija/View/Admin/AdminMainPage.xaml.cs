@@ -26,5 +26,10 @@ namespace StomatoloskaOrdinacija.View.Admin
         {
             this.InitializeComponent();
         }
+
+        private void textBlock_Copy_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

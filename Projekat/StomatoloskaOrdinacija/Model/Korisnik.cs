@@ -19,5 +19,6 @@ namespace StomatoloskaOrdinacija.Model
         {
             KorisnikMobilneApp = pacijent;
         }
+        public Korisnik() { }
     }
 }

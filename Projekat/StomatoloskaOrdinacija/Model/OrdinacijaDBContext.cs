@@ -16,16 +16,17 @@ namespace StomatoloskaOrdinacija.Model
         public DbSet<Karton> Kartoni { get; set; }
         public DbSet<Korisnik> Korisnici { get; set; }
         public DbSet<Oprema> Opreme { get; set; }
-        public DbSet<Osoblje> MyProperty { get; set; }
+        public DbSet<Osoblje> Osobljee { get; set; }
         public DbSet<Admin> Administratori { get; set; }
         public DbSet<Recepcionar> Recepcionari { get; set; }
         public DbSet<Stomatolog> Stomatolozi { get; set; }
         public DbSet<ZakazaniTermin> ZakazaniTermini { get; set; }
 
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dataBaseFilePath = "Ordinacija1.db";
+            string dataBaseFilePath = "Ordinacija2.db";
             try
             {
                 dataBaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, dataBaseFilePath);

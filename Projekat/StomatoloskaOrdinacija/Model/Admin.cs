@@ -12,12 +12,12 @@ namespace StomatoloskaOrdinacija.Model
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AdminID { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        
         public Admin(string username, string password, string imeAdmina, string prezimeAdmina, DateTime datumRodjenjaAdmina) : base(imeAdmina, prezimeAdmina, datumRodjenjaAdmina)
         {
             Username = username;
             Password = password;
+            TipOsoblja = "Admin";
         }
 
         public Admin() { }

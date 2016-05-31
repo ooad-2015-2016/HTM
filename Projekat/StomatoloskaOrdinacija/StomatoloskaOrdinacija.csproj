@@ -98,12 +98,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\NavigationService.cs" />
+    <Compile Include="Helper\PasswordBoxAssistant.cs" />
+    <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20160528204816_InitialMigration.cs" />
-    <Compile Include="Migrations\20160528204816_InitialMigration.designer.cs">
-      <DependentUpon>20160528204816_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20160530183724_InitialMigration.cs" />
+    <Compile Include="Migrations\20160530183724_InitialMigration.designer.cs">
+      <DependentUpon>20160530183724_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\OrdinacijaDBContextModelSnapshot.cs" />
     <Compile Include="Model\Admin.cs" />
@@ -124,7 +127,11 @@
     <Compile Include="Model\Zahvat.cs" />
     <Compile Include="Model\ZakazaniTermin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AdminVM.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
+    <Compile Include="ViewModel\PacijentVM.cs" />
+    <Compile Include="ViewModel\RecepcionarVM.cs" />
+    <Compile Include="ViewModel\StomatologVM.cs" />
     <Compile Include="View\Admin\AdminMainPage.xaml.cs">
       <DependentUpon>AdminMainPage.xaml</DependentUpon>
     </Compile>

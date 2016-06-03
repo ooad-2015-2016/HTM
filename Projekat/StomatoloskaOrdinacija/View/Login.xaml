@@ -16,18 +16,32 @@
 
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" DataContext="{Binding Source={StaticResource login}}">
-        <RelativePanel HorizontalAlignment="Center" Height="544" VerticalAlignment="Center" Width="462" Margin="431,97,387,79">
+    <Grid DataContext="{Binding Source={StaticResource login}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF0C2038" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <RelativePanel Grid.Column="1" HorizontalAlignment="Center" Width="449" Height="528" VerticalAlignment="Center">
             <RelativePanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0E1F3C" Offset="1"/>
                     <GradientStop Color="White"/>
                 </LinearGradientBrush>
             </RelativePanel.Background>
-            <TextBox Text="{Binding Username,Mode=TwoWay}" x:Name="textBox" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="278" Margin="97,130,-304,-130" PlaceholderText="Username"/>
-            <PasswordBox x:Name="PasswordBox" ff:PasswordBoxAssistant.BindPassword="true"  ff:PasswordBoxAssistant.BoundPassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="97,186,-373,-186" PlaceholderText="**********"/>
-            <Button x:Name="button" Content="Prijava" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="276" Margin="97,337,-308,-337" Click="button_Click" Command="{Binding Prijavaa, Source={StaticResource login}}" CommandParameter="{Binding Text, ElementName=textBox}" Background="#33FFFFFF" RequestedTheme="Light"/>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" Text="LOGIN" VerticalAlignment="Top" Width="116" Margin="179,35,-233,-65" FontSize="36" SelectionChanged="textBlock_SelectionChanged" Foreground="#FF7E7E7E"/>
+            <TextBlock x:Name="textBlock" Height="50" TextWrapping="Wrap" Text="LOGIN" Width="116" Margin="179,35,0,-65" FontSize="36" SelectionChanged="textBlock_SelectionChanged" Foreground="#FF7E7E7E" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding Username, Mode=TwoWay}" x:Name="textBox" Height="32" TextWrapping="Wrap" Margin="123,130,-75,-130" PlaceholderText="Username" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213"/>
+            <PasswordBox x:Name="PasswordBox" ff:PasswordBoxAssistant.BindPassword="true"  ff:PasswordBoxAssistant.BoundPassword="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="123,186,-60,-186" PlaceholderText="**********" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213"/>
+            <Button x:Name="button" Content="Prijava" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="213" Margin="123,337,-271,-337" Click="button_Click" Command="{Binding Prijavaa, Source={StaticResource login}}" CommandParameter="{Binding Text, ElementName=textBox}" Background="#33FFFFFF" RequestedTheme="Light"/>
         </RelativePanel>
 
     </Grid>

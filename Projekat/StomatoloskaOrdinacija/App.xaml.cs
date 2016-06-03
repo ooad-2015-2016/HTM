@@ -2,6 +2,8 @@
 using StomatoloskaOrdinacija.Model;
 using StomatoloskaOrdinacija.View;
 using StomatoloskaOrdinacija.View.Admin;
+using StomatoloskaOrdinacija.View.Recepcionar;
+using StomatoloskaOrdinacija.View.Stomatolog;
 using System;
 using System.Collections.Generic;
 using System.IO;

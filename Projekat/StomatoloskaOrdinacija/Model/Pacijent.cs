@@ -12,6 +12,7 @@ namespace StomatoloskaOrdinacija.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PacijentID { get; set; }
         public string StatusPacijenta { get; set; }
+        public byte[] Slika { get; set; }//slika pacijenta
         public Pacijent(string imePacijenta, string prezimePacijenta, DateTime datumRodjenjaPacijenta) : base(imePacijenta, prezimePacijenta, datumRodjenjaPacijenta) { }
         public Pacijent() { }
 

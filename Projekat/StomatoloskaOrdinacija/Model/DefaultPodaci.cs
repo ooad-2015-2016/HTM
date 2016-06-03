@@ -33,18 +33,33 @@ namespace StomatoloskaOrdinacija.Model
             }
             if (!context.Kartoni.Any())
             {
-                Zahvat tmpZahvat = new Zahvat() { ImeIPrezimePacijenta = "Haris Palic", ImeIPrezimeStomatologa = "Muamer Purisic" };  
+                Pacijent tmpPacijent = new Pacijent("Mujo", "Mujic", new DateTime(1987, 12, 12)) { PacijentID=2,StatusPacijenta="Penzioner" };
+                context.Pacijenti.AddRange(tmpPacijent);
+                Stomatolog tmpStomatolog = new Stomatolog("kikebudalike", "12345", "Kike", "Budalike", new DateTime(1859, 5, 3)) { StomatologID = 1 };
 
-                Karton tmpKarton = new Karton() { Zahvati = new List<Zahvat>() { tmpZahvat },KartonID=1 };
+                context.Stomatolozi.AddRange(tmpStomatolog);
 
-                context.Kartoni.AddRange( tmpKarton);
+                Osoblje tmpOsoblje = tmpStomatolog;
+                tmpOsoblje.OsobljeID = 1;
+
+                context.Osobljee.AddRange(tmpOsoblje);
+
+                Zahvat tmpZahvat = new Zahvat() {OpisZahvata="popravljen zub", Pacijent=tmpPacijent, Stomatolog=tmpStomatolog, PacijenIDuZahvatu=2,StomatologIDuZahvatu=1 };
+                context.Zahvati.AddRange(tmpZahvat);
+
+                Karton tmpKarton = new Karton() {KartonID=1, Zahvat=tmpZahvat,ZahvatIDuKartonu=1 };
+
+                context.Kartoni.AddRange( tmpKarton );
                 context.SaveChanges();
             }
             if (!context.Korisnici.Any())
             {
                 //Korisnik KorisnikMobilneApptmp = new Korisnik() {KorisnikID=2, k };
                 Pacijent tmpPacijent = new Pacijent("Nermana", "Suljic", new DateTime(1992, 11, 12)) { StatusPacijenta = "student" };
-                Korisnik tmpKorisnik = new Korisnik() { KorisnikID = 1, KorisnikMobilneApp=tmpPacijent, Username="nerminasuljic",Password="12345" };
+                context.Pacijenti.AddRange(tmpPacijent);
+                
+
+                Korisnik tmpKorisnik = new Korisnik() { KorisnikID = 1, Pacijent=tmpPacijent, Username="nerminasuljic",Password="12345" };
                 context.Korisnici.AddRange(tmpKorisnik);
                 context.SaveChanges();
             }

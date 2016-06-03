@@ -5,9 +5,64 @@
     xmlns:local="using:StomatoloskaOrdinacija.View.Stomatolog"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mo="using:StomatoloskaOrdinacija.Model"
+    xmlns:test="using:StomatoloskaOrdinacija.View.Stomatolog"
+    xmlns:vm="using:StomatoloskaOrdinacija.ViewModel"
     mc:Ignorable="d">
+    <Page.Resources>
+        <mo:Stomatolog x:Key="sa"/>
+        <vm:StomatologVM x:Key="Stomatolog"/>
+    </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="wp">
+                <VisualState x:Name="narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="700"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="control.Orientation" Value="Horizontal"/>-->
+                    </VisualState.Setters>
+                </VisualState>
+
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF093D55" Offset="1"/>
+                <GradientStop Color="Black"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <RelativePanel x:Name="control" HorizontalAlignment="Center" Height="495" VerticalAlignment="Center" Width="1003" Grid.Column="1" >
+            <RelativePanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3387B8" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </RelativePanel.Background>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="345,10,-497,-73" TextWrapping="Wrap" Text="STOMATOLOG" VerticalAlignment="Top" FontSize="48" Foreground="#FF13293E"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="81,345,0,-132" TextWrapping="Wrap" Text="popis opreme" VerticalAlignment="Top" FontSize="20"/>
+            <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="322,345,-107,-132" TextWrapping="Wrap" Text="unos zahvata" VerticalAlignment="Top" FontSize="20"/>
+            <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="526,350,-311,-137" TextWrapping="Wrap" Text="pregled  termina" VerticalAlignment="Top" FontSize="20"/>
+            <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="790,355,-575,-142" TextWrapping="Wrap" Text="lista pacijenata" VerticalAlignment="Top" FontSize="20"/>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="146" Margin="81,164,-204,-292" Source="ms-appx:///Icons/PopisOpreme.png"/>
+            <Image x:Name="image1" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="146" Margin="312,164,-458,-292" Source="ms-appx:///Icons/unosZahvata.png"/>
+            <Image x:Name="image2" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="146" Margin="527,164,-673,-273" Source="ms-appx:///Icons/uvidTermina.png"/>
+            <Button x:Name="button" Content="" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="130" Margin="790,164,-855,-260" Command="{Binding ListaPacijenataa, Source={StaticResource Stomatolog}}" CommandParameter="{x:Bind Stomatolog}" >
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/listaPacijenatav2.png"/>
+                </Button.Background>
+            </Button>
+        </RelativePanel>
+
 
     </Grid>
 </Page>

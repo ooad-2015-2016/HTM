@@ -5,9 +5,42 @@
     xmlns:local="using:StomatoloskaOrdinacija.View.Recepcionar"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF3C1E10" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+
+        </Grid.ColumnDefinitions>
+        <RelativePanel HorizontalAlignment="Center" Height="495" Margin="133,75,144,150" VerticalAlignment="Center" Width="1003">
+            <RelativePanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3E240F"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </RelativePanel.Background>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="RECEPCIONAR" VerticalAlignment="Top" FontSize="48" Margin="346,47,-341,-47" Foreground="#FF3C1E10"/>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="114" Margin="418,195,-531,-306" Source="ms-appx:///Icons/Naplata.png"/>
+            <Image x:Name="image1" HorizontalAlignment="Left" Height="171" VerticalAlignment="Top" Width="166" Margin="648,166,-814,-337" Source="ms-appx:///Icons/dodajPacijenta.png" Stretch="Fill"/>
+            <Image x:Name="image2" HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="114" Margin="184,195,-298,-306" Source="ms-appx:///Icons/Termin.png"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="53" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Margin="205,339,-219,-372" FontSize="16">
+            	<Run Text="Izmjena "/>
+            	<LineBreak/>
+            	<Run Text="termina"/>
+            </TextBlock>
+            <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="Npalati" VerticalAlignment="Top" Width="67" Margin="445,339,-450,-344" FontSize="16"/>
+            <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Height="55" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" Margin="694,337,-699,-372" FontSize="16">
+            	<Run Text="Registruj"/>
+            	<LineBreak/>
+            	<Run Text="pacijenta"/>
+            </TextBlock>
+        </RelativePanel>
 
     </Grid>
 </Page>

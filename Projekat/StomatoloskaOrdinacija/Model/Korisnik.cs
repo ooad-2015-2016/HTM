@@ -13,11 +13,13 @@ namespace StomatoloskaOrdinacija.Model
         public int KorisnikID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public Pacijent KorisnikMobilneApp { get; set; }
+        public int PacijentIDuKorisnik { get; set; }
+        public Pacijent Pacijent { get; set; }
 
-        public Korisnik(string username, string password, Pacijent pacijent)
+        public Korisnik(string username, string password,Pacijent korisnikApp)
         {
-            KorisnikMobilneApp = pacijent;
+            Username = username;
+            Password = password;
         }
         public Korisnik() { }
     }

@@ -11,12 +11,11 @@ namespace StomatoloskaOrdinacija.Model
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int KartonID { get; set; }
-
-        // private Zahvat z;
-        public virtual ICollection<Zahvat> Zahvati { get; set; }
+        public int ZahvatIDuKartonu { get; set; }
+        public Zahvat Zahvat { get; set; }
         public Karton()
         {
-            Zahvati = new List<Zahvat>();
+            
         }
     }
 }

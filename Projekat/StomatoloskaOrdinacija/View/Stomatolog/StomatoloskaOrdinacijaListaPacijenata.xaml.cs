@@ -21,28 +21,19 @@ namespace StomatoloskaOrdinacija.View.Stomatolog
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class StomatologMainPage : Page
+    public sealed partial class StomatoloskaOrdinacijaListaPacijenata : Page
     {
-        public Model.Stomatolog Stomatolog { get; set; }
-        public StomatologMainPage()
+        public StomatoloskaOrdinacijaListaPacijenata()
         {
             this.InitializeComponent();
-
-         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        }
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            base.OnNavigatedTo(e);
-            
-            //Dobavljanje stomatologa iz parametra budući da je isti sa logina poslan kao parametar
-            if (e.Parameter != null)
+            using (var db = new OrdinacijaDBContext())
             {
-                Stomatolog = (Model.Stomatolog)e.Parameter;
+                PacijentiIS.ItemsSource = db.Pacijenti.ToList();
             }
         }
     }
-
-
-   
-
-
+    
 }

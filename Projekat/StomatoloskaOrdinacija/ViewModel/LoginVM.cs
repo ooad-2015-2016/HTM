@@ -41,7 +41,8 @@ namespace StomatoloskaOrdinacija.ViewModel
             }
         }
         public ICommand Prijavaa { get; set; }
-        public INavigationService NavigationService { get; set; }
+        public INavigationService NavigationService { get; set; }
+
 
         public LoginVM()
         {
@@ -67,9 +68,8 @@ namespace StomatoloskaOrdinacija.ViewModel
             }
             return false;
         }
-        public void LogujSe(object parametar)
+        public async void LogujSe(object parametar)
         {
-            //NavigationService.Navigate(typeof(AdminMainPage));
 
             var context = new OrdinacijaDBContext();
             var osoblje = context.Osobljee.ToList();
@@ -81,16 +81,23 @@ namespace StomatoloskaOrdinacija.ViewModel
                     switch (tmpOsoblje.TipOsoblja)
                     {
                         case "Admin":
-                            NavigationService.Navigate(typeof(AdminMainPage));
+                            NavigationService.Navigate(typeof(AdminMainPage),tmpOsoblje as Admin);
                             break;
                         case "Stomatolog":
-                            NavigationService.Navigate(typeof(StomatologMainPage));
+                            List<Stomatolog> tmpListaStomatologa = context.Stomatolozi.Where(s => s.OsobljeID.Equals(tmpOsoblje.OsobljeID)).ToList();
+                            foreach (Stomatolog s in tmpListaStomatologa)
+                                { if (s.OsobljeID == tmpOsoblje.OsobljeID)
+                                    NavigationService.Navigate(typeof(StomatologMainPage), s );
+                                 };
                             break;
                         case "Recepcionar":
-                            NavigationService.Navigate(typeof(RecepcionarMainPage));
-                            break;
-                        
+                            NavigationService.Navigate(typeof(RecepcionarMainPage), tmpOsoblje as Recepcionar);
+                            break;           
                     }
+                } else
+                {
+                    var dialog = new MessageDialog("Pogrešno korisničko ime/šifra!");
+                    await dialog.ShowAsync();
                 }
 
              

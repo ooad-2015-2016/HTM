@@ -9,14 +9,13 @@ namespace StomatoloskaOrdinacija.Model
 {
     public class Zahvat
     {
-        //stomatolog koji vrši zahvat
-        //pacijent na kojem se izvršava zahvat
-        //private Stomatolog stomatolog;
-        //private Pacijent pacijent;
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ZahvatID { get; set; }
-        public string ImeIPrezimePacijenta { get; set; }
-        public string ImeIPrezimeStomatologa { get; set; }
+        public Pacijent Pacijent { get; set; }
+        public int PacijenIDuZahvatu { get; set; }
+        public int StomatologIDuZahvatu { get; set; }
+        public Stomatolog Stomatolog { get; set; }
+        public string OpisZahvata { get; set; }
         public DateTime DatumZahvata { get; set; }
 
         public void UnosZahvataUKarton() { }

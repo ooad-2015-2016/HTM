@@ -100,13 +100,14 @@
     </Compile>
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\PasswordBoxAssistant.cs" />
+    <Compile Include="Helper\PictureConverter.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20160530183724_InitialMigration.cs" />
-    <Compile Include="Migrations\20160530183724_InitialMigration.designer.cs">
-      <DependentUpon>20160530183724_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20160603151938_InitialMigration.cs" />
+    <Compile Include="Migrations\20160603151938_InitialMigration.designer.cs">
+      <DependentUpon>20160603151938_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\OrdinacijaDBContextModelSnapshot.cs" />
     <Compile Include="Model\Admin.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\PacijentVM.cs" />
     <Compile Include="ViewModel\RecepcionarVM.cs" />
+    <Compile Include="ViewModel\StomatologListaPacijenataVM.cs" />
     <Compile Include="ViewModel\StomatologVM.cs" />
     <Compile Include="View\Admin\AdminMainPage.xaml.cs">
       <DependentUpon>AdminMainPage.xaml</DependentUpon>
@@ -141,11 +143,35 @@
     <Compile Include="View\Pacijent\PacijentMainPage.xaml.cs">
       <DependentUpon>PacijentMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Recepcionar\RecepcionarIzmjenaTermina.xaml.cs">
+      <DependentUpon>RecepcionarIzmjenaTermina.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Recepcionar\RecepcionarMainPage.xaml.cs">
       <DependentUpon>RecepcionarMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Recepcionar\RecepcionarNaplati.xaml.cs">
+      <DependentUpon>RecepcionarNaplati.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Recepcionar\RegistracijaPacijenta.xaml.cs">
+      <DependentUpon>RegistracijaPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stomatolog\StomatologListaPacijenata.xaml.cs">
+      <DependentUpon>StomatologListaPacijenata.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Stomatolog\StomatologMainPage.xaml.cs">
       <DependentUpon>StomatologMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stomatolog\StomatologPopisOpreme.xaml.cs">
+      <DependentUpon>StomatologPopisOpreme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stomatolog\StomatologPregledTermina.xaml.cs">
+      <DependentUpon>StomatologPregledTermina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stomatolog\StomatologUnosZahvata.xaml.cs">
+      <DependentUpon>StomatologUnosZahvata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stomatolog\StomatoloskaOrdinacijaListaPacijenata.xaml.cs">
+      <DependentUpon>StomatoloskaOrdinacijaListaPacijenata.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +181,13 @@
     <None Include="StomatoloskaOrdinacija_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icons\DodajPacijenta.png" />
+    <Content Include="Icons\listaPacijenatav2.png" />
+    <Content Include="Icons\Naplata.png" />
+    <Content Include="Icons\PopisOpreme.png" />
+    <Content Include="Icons\Termin.png" />
+    <Content Include="Icons\unosZahvata.png" />
+    <Content Include="Icons\uvidTermina.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -185,11 +218,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Recepcionar\RecepcionarIzmjenaTermina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Recepcionar\RecepcionarMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Recepcionar\RecepcionarNaplati.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Recepcionar\RegistracijaPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Stomatolog\StomatologListaPacijenata.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Stomatolog\StomatologMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Stomatolog\StomatologPopisOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Stomatolog\StomatologPregledTermina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Stomatolog\StomatologUnosZahvata.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Stomatolog\StomatoloskaOrdinacijaListaPacijenata.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

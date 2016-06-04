@@ -105,9 +105,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20160603151938_InitialMigration.cs" />
-    <Compile Include="Migrations\20160603151938_InitialMigration.designer.cs">
-      <DependentUpon>20160603151938_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20160604190810_InitialMigration.cs" />
+    <Compile Include="Migrations\20160604190810_InitialMigration.designer.cs">
+      <DependentUpon>20160604190810_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\OrdinacijaDBContextModelSnapshot.cs" />
     <Compile Include="Model\Admin.cs" />
@@ -133,6 +133,8 @@
     <Compile Include="ViewModel\PacijentVM.cs" />
     <Compile Include="ViewModel\RecepcionarVM.cs" />
     <Compile Include="ViewModel\StomatologListaPacijenataVM.cs" />
+    <Compile Include="ViewModel\StomatologPregledTerminaVM.cs" />
+    <Compile Include="ViewModel\StomatologUnosZahvataVM.cs" />
     <Compile Include="ViewModel\StomatologVM.cs" />
     <Compile Include="View\Admin\AdminMainPage.xaml.cs">
       <DependentUpon>AdminMainPage.xaml</DependentUpon>
@@ -169,9 +171,6 @@
     </Compile>
     <Compile Include="View\Stomatolog\StomatologUnosZahvata.xaml.cs">
       <DependentUpon>StomatologUnosZahvata.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Stomatolog\StomatoloskaOrdinacijaListaPacijenata.xaml.cs">
-      <DependentUpon>StomatoloskaOrdinacijaListaPacijenata.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -251,10 +250,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Stomatolog\StomatologUnosZahvata.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Stomatolog\StomatoloskaOrdinacijaListaPacijenata.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -13,6 +13,8 @@ namespace StomatoloskaOrdinacija.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ZakazaniTerminID { get; set; }
         public DateTime Termini { get; set; }
+        public int PacijentID { get; set; }
+        public int StomatologID { get; set; }
 
         public ZakazaniTermin()
         {

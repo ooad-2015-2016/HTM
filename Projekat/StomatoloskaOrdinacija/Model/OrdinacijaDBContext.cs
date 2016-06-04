@@ -27,7 +27,7 @@ namespace StomatoloskaOrdinacija.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dataBaseFilePath = "Ordinacija15.db";
+            string dataBaseFilePath = "Ordinacija21.db";
             try
             {
                 dataBaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, dataBaseFilePath);
@@ -40,7 +40,8 @@ namespace StomatoloskaOrdinacija.Model
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //jedno od polja je image da se zna šta je zapravo predstavlja byte[]
-            modelBuilder.Entity<Pacijent>().Property(p => p.Slika).HasColumnType("image");
+            modelBuilder.Entity<Pacijent>().Property(p => p.Slika).HasColumnType("image");
+
         }
 
 

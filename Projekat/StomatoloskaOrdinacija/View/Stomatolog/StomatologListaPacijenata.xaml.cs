@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using StomatoloskaOrdinacija.Model;
 using StomatoloskaOrdinacija.ViewModel;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,7 +31,16 @@ namespace StomatoloskaOrdinacija.View.Stomatolog
         public StomatologListaPacijenata()
         {
             this.InitializeComponent();
-            
+
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested -= ThisPage_BackRequested;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -43,6 +53,16 @@ namespace StomatoloskaOrdinacija.View.Stomatolog
                 Stomatolog = (Model.Stomatolog)e.Parameter;
                 Pacijenti = new ViewModel.StomatologListaPacijenataVM().VratiSvePacijente(Stomatolog);
             }
+
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+
+        }
+
+        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+                if (Frame.CanGoBack) { Frame.GoBack(); e.Handled = true;}  
         }
     }
 }

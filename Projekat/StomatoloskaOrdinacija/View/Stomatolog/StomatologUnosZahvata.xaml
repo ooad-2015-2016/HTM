@@ -5,9 +5,63 @@
     xmlns:local="using:StomatoloskaOrdinacija.View.Stomatolog"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ou="using:StomatoloskaOrdinacija.ViewModel"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <ou:StomatologUnosZahvataVM x:Key="kontdrole"/>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF1C2C40" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <RelativePanel HorizontalAlignment="Left" Height="450" Margin="0,94,0,0" VerticalAlignment="Top" Width="999.8" Grid.Column="1">
+            <RelativePanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF081D36" Offset="0"/>
+                    <GradientStop Color="#FF76B4FF" Offset="1"/>
+                </LinearGradientBrush>
+            </RelativePanel.Background>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Margin="66,127,-125,-127">
+            	<Run Text="Ime "/>
+            	<Run Text="p"/>
+            	<Run Text="acijenta"/>
+            </TextBlock>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Prezime pacijenta" VerticalAlignment="Top" Width="132" Margin="233,123,-303,-123"/>
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Datum" VerticalAlignment="Top" Width="62" Margin="563,123,-563,-123"/>
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Opsi zahvata" VerticalAlignment="Top" Width="98" Margin="825,127,-861,-127"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="{Binding ImePacijenta, Mode=TwoWay, Source={StaticResource kontdrole}}" VerticalAlignment="Top" Width="150" Margin="37,185,-106,-185"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="{Binding PrezimePacijenta, Mode=TwoWay, Source={StaticResource kontdrole}}" VerticalAlignment="Top" Width="150" Margin="233,185,-288,-185"/>
+            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="{Binding OpisZahvataa, Mode=TwoWay, Source={StaticResource kontdrole}}" VerticalAlignment="Top" Width="150" Margin="801,185,-801,-185"/>
+            <DatePicker HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="277" Margin="454,185,-435,-185" Date="{Binding DatumZahvata, Source={StaticResource kontdrole}}"/>
+            <Button Name="MyFlyoutButton"
+                Margin="369,382,-467,-362"
+                Grid.Row="3" 
+                Grid.Column="1" 
+                Content="Unesi zahvat" Command="{Binding UnesiZahvata, Source={StaticResource kontdrole}}" CommandParameter="{x:Bind TrenutniStomatolog}" Width="222" HorizontalAlignment="Center">
+                <Button.Flyout>
+                    <Flyout x:Name="MyFlyout">
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
+                            <TextBlock Text="Uspješno ste unijeli zahvat.." Margin="0,0,0,10" />
+                            <Button Name="InnerFlyoutButton" 
+                                HorizontalAlignment="Right" 
+                                Content="OK" Click="InnerFlyoutButton_Click" 
+                                 />
+                        </StackPanel>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+            <TextBlock x:Name="textBlock4" HorizontalAlignment="Center" Height="76" TextWrapping="Wrap" Text="UNOS ZAHVATA" VerticalAlignment="Center" Width="365" Margin="307,10,-610,-66" FontSize="48" Foreground="#FF071C36"/>
+        </RelativePanel>
 
     </Grid>
 </Page>

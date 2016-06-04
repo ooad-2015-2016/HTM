@@ -68,40 +68,52 @@ namespace StomatoloskaOrdinacija.ViewModel
             }
             return false;
         }
+
+        private bool Provjera(string tmpUsername, string tmpPassword)
+        {
+            using (var context = new OrdinacijaDBContext())
+            {
+                var osoblje = context.Osobljee.ToList();
+                foreach (Osoblje tmpOsoblje in osoblje)
+                    if (Username.Equals(tmpOsoblje.Username) && (Password.Equals(tmpOsoblje.Password)))
+                    {
+                        switch (tmpOsoblje.TipOsoblja.ToLower())
+                        {
+                            case "admin":
+                                List<Admin> tmpListaAdmina = context.Administratori.Where(a => a.OsobljeID.Equals(tmpOsoblje.OsobljeID)).ToList();
+                                foreach(Admin a in tmpListaAdmina)
+                                    if(a.OsobljeID==tmpOsoblje.OsobljeID)
+                                       NavigationService.Navigate(typeof(AdminMainPage), a);
+                                return true;
+
+                            case "stomatolog":
+                                List<Stomatolog> tmpListaStomatologa = context.Stomatolozi.Where(s => s.OsobljeID.Equals(tmpOsoblje.OsobljeID)).ToList();
+                                foreach (Stomatolog s in tmpListaStomatologa)
+                                    if (s.OsobljeID == tmpOsoblje.OsobljeID)
+                                        NavigationService.Navigate(typeof(StomatologMainPage), s);
+                                return true;
+
+                            case "recepcionar":
+                                NavigationService.Navigate(typeof(RecepcionarMainPage), tmpOsoblje as Recepcionar);
+                                return true;
+                        }
+                    }
+
+            }
+
+            return false;
+        }
+
+
         public async void LogujSe(object parametar)
         {
 
-            var context = new OrdinacijaDBContext();
-            var osoblje = context.Osobljee.ToList();
-            
-
-            foreach (Osoblje tmpOsoblje in osoblje)
-            if (username.Equals(tmpOsoblje.Username) && (password.Equals(tmpOsoblje.Password)))
-                {
-                    switch (tmpOsoblje.TipOsoblja)
-                    {
-                        case "Admin":
-                            NavigationService.Navigate(typeof(AdminMainPage),tmpOsoblje as Admin);
-                            break;
-                        case "Stomatolog":
-                            List<Stomatolog> tmpListaStomatologa = context.Stomatolozi.Where(s => s.OsobljeID.Equals(tmpOsoblje.OsobljeID)).ToList();
-                            foreach (Stomatolog s in tmpListaStomatologa)
-                                { if (s.OsobljeID == tmpOsoblje.OsobljeID)
-                                    NavigationService.Navigate(typeof(StomatologMainPage), s );
-                                 };
-                            break;
-                        case "Recepcionar":
-                            NavigationService.Navigate(typeof(RecepcionarMainPage), tmpOsoblje as Recepcionar);
-                            break;           
-                    }
-                } else
-                {
-                    var dialog = new MessageDialog("Pogrešno korisničko ime/šifra!");
-                    await dialog.ShowAsync();
-                }
-
-             
+            if (!Provjera(Username, Password))
+            {
+                var dialog = new MessageDialog("Pogrešno korisničko ime/šifra!");
+                await dialog.ShowAsync();
+            }
         }
-   
+
     }
 }

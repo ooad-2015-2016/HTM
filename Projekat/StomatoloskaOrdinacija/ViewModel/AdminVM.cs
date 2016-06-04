@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using StomatoloskaOrdinacija.Model;
+using Windows.UI.Popups;
+using Windows.UI.Xaml.Controls;
 
 namespace StomatoloskaOrdinacija.ViewModel
 {
@@ -13,36 +16,39 @@ namespace StomatoloskaOrdinacija.ViewModel
     {
         private string imeOsoblja;
         private string prezimeOsoblja;
-        private string datumRodjenjaOsoblja;
+        private DateTimeOffset datumRodjenjaOsoblja;
         private string username;
         private string password;
 
-        public string Password
+        public string PasswordOsoblja
         {
             get { return password; }
             set
             {
                 password = value;
-                KadaSePromijeni("Password");
+                KadaSePromijeni("PasswordOsoblja");
             }
         }
 
 
-        public string Username
+        public string UsernameOsoblja
         {
             get { return username; }
             set
             {
                 username = value;
-                KadaSePromijeni("Username");
+                KadaSePromijeni("UsernameOsoblja");
             }
         }
 
 
-        public string DatumRodjenjaOsoblja
+        public DateTimeOffset DatumRodjenjaOsoblja
         {
             get { return datumRodjenjaOsoblja; }
-            set { datumRodjenjaOsoblja = value; }
+            set {
+                datumRodjenjaOsoblja = value;
+                KadaSePromijeni("DatumRodjenjaOsoblja");
+            }
         }
 
 
@@ -70,13 +76,20 @@ namespace StomatoloskaOrdinacija.ViewModel
         public ICommand RegistrujStomatologaa { get; set; }
         public ICommand RegistrujRecepcionaraa { get; set; }
 
+
         public AdminVM()
         {
             RegistrujStomatologaa = new RelayCommand<object>(RegistrujStomatologa, MozeLiSeRegistrovatStomatolog);
             RegistrujRecepcionaraa = new RelayCommand<object>(RegistrujRecepcionara,MozeLiSeRegistrovatRecepcionar);
-        }
+            datumRodjenjaOsoblja = new DateTimeOffset(DateTime.Now);
 
+        }
+        
+        
         public event PropertyChangedEventHandler PropertyChanged;
+
+
+
         private void KadaSePromijeni(string podaci)
         {
             if (PropertyChanged != null)
@@ -87,24 +100,50 @@ namespace StomatoloskaOrdinacija.ViewModel
         {
             return true;
         }
-        public void RegistrujStomatologa(object parametar)
+        public async  void RegistrujStomatologa(object parametar)
         {
-            string s = "aaa";
+           
+           
+           using(Model.OrdinacijaDBContext context = new OrdinacijaDBContext())
+            {
+                Model.Osoblje tmpOsoblje = new Osoblje(ImeOsoblja, PrezimeOsoblja, DatumRodjenjaOsoblja.Date) { Username = UsernameOsoblja, Password = PasswordOsoblja, TipOsoblja = "stomatolog" };
+                context.Osobljee.AddRange(tmpOsoblje);
+                context.SaveChanges();
+                tmpOsoblje=context.Osobljee.LastOrDefault();
+
+                Model.Stomatolog tmpStomatolog = new Stomatolog(UsernameOsoblja, PasswordOsoblja, ImeOsoblja, PrezimeOsoblja, DatumRodjenjaOsoblja.Date) { OsobljeID = tmpOsoblje.OsobljeID};
+                context.Stomatolozi.AddRange(tmpStomatolog);
+                await context.SaveChangesAsync();
+
+                //var dialog = new MessageDialog("Stomatolog je u bazi..");
+                //await dialog.ShowAsync();
+            }
 
         }
         public bool MozeLiSeRegistrovatRecepcionar(object parametar)
         {
-            AdminVM tmpAdminPodaci = parametar as AdminVM;
-
-            //if (String.IsNullOrEmpty(tmpAdminPodaci.ImeOsoblja)) return false;
+           
             return true;
            
         }
-        public void RegistrujRecepcionara(object parametar)
+        public async void RegistrujRecepcionara(object parametar)
         {
-            string s = "aaa";
 
-        }
+            using (Model.OrdinacijaDBContext context = new OrdinacijaDBContext())
+            {
+                Model.Osoblje tmpOsoblje = new Osoblje(ImeOsoblja, PrezimeOsoblja, datumRodjenjaOsoblja.Date) { Username = UsernameOsoblja, Password = PasswordOsoblja, TipOsoblja = "recepcionar" };
+                context.Osobljee.AddRange(tmpOsoblje);
+                context.SaveChanges();
+                tmpOsoblje = context.Osobljee.LastOrDefault();
+
+                Model.Recepcionar tmpRecepcionar = new Recepcionar(UsernameOsoblja, PasswordOsoblja, ImeOsoblja, PrezimeOsoblja, DatumRodjenjaOsoblja.Date) { OsobljeID = tmpOsoblje.OsobljeID };
+                context.Recepcionari.AddRange(tmpRecepcionar);
+                await context.SaveChangesAsync();
+                //var dialog = new MessageDialog("Recepcionar je u bazi..");
+                //await dialog.ShowAsync();
+            }
+
+        }    
 
     }
 }

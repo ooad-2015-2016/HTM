@@ -14,11 +14,23 @@ namespace StomatoloskaOrdinacija.ViewModel
     {
         public Stomatolog Stomatolog { get; set; }
         public ICommand ListaPacijenataa { get; set; }
+        public ICommand UnosZahvata { get; set; }
         public INavigationService NavigationService { get; set; }
         public StomatologVM()
         {
             ListaPacijenataa= new RelayCommand<object>(ListaPacijenata, MozeLiListaPacijenata);
+            UnosZahvata= new RelayCommand<object>(Unos, MozeLiUnos);
             NavigationService = new NavigationService();
+        }
+        public bool MozeLiUnos(object parametar)
+        {
+            return true;
+        }
+        public void Unos(object parametar)
+        {
+            
+            NavigationService.Navigate(typeof(StomatologUnosZahvata), parametar);
+
         }
         public bool MozeLiListaPacijenata(object parametar)
         {
@@ -26,10 +38,9 @@ namespace StomatoloskaOrdinacija.ViewModel
         }
         public void ListaPacijenata(object parametar)
         {
-            Stomatolog = parametar as Stomatolog;
+            
            NavigationService.Navigate(typeof(StomatologListaPacijenata),parametar);
            
-
         }
     }
 }

@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using StomatoloskaOrdinacija.Model;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,14 +23,35 @@ namespace StomatoloskaOrdinacija.View.Admin
     /// </summary>
     public sealed partial class AdminMainPage : Page
     {
+        public Model.Admin Admin { get; set; }
         public AdminMainPage()
         {
             this.InitializeComponent();
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
 
-        private void textBlock_Copy_SelectionChanged(object sender, RoutedEventArgs e)
+            //Dobavljanje stomatologa iz parametra budući da je isti sa logina poslan kao parametar
+            if (e.Parameter != null)
+            {
+                Admin = (Model.Admin)e.Parameter;
+            }
+        }
+
+        private void CalendarDatePicker_DateChanged(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)
         {
 
+        }
+
+        private void InnerFlyoutButton2_Click(object sender, RoutedEventArgs e)
+        {
+            MyFlyout2.Hide();
+        }
+
+        private void InnerFlyoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            MyFlyout.Hide();
         }
     }
 }

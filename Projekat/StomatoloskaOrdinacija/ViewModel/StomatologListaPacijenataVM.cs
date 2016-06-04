@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Sqlite;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
 
 namespace StomatoloskaOrdinacija.ViewModel
 {
@@ -15,21 +17,43 @@ namespace StomatoloskaOrdinacija.ViewModel
     {
         public static List<Pacijent> Pacijenti { get; set; }
         private Stomatolog tmpStomatolog;
+        public StomatologVM Parent { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string CoverImage { get; set; }
         public INavigationService NavigationService { get; set; }
 
         public ICommand Prikazii { get; set; }
+        public ICommand Backk { get; set; }
 
         public StomatologListaPacijenataVM()
         {
             Prikazii = new RelayCommand<object>(Prikazi, MozeLiSePrikazati);
             Pacijenti = new List<Pacijent>();
             NavigationService = new NavigationService();
-            
+            //Parent = new StomatologVM();     
         }
-        
+        public StomatologListaPacijenataVM(StomatologVM trenutniStomatologVM)
+        {
+            Parent = trenutniStomatologVM;
+            Prikazii = new RelayCommand<object>(Prikazi, MozeLiSePrikazati);
+            Pacijenti = new List<Pacijent>();
+            NavigationService = new NavigationService();
+        }
+
+
+        public bool MozeLiBack(object parametar)
+        {
+            return true;
+
+        }
+        public void Back(object parametar)
+        {
+            var frame = (Frame)Window.Current.Content;
+            frame.GoBack();
+
+            //Parent.NavigationService.GoBack();
+        }
 
         public bool MozeLiSePrikazati(object parametar)
         {
@@ -61,7 +85,6 @@ namespace StomatoloskaOrdinacija.ViewModel
         public List<Pacijent> VratiSvePacijente(Stomatolog nekiStomatolog)
         {
 
-
             //var nekiStomatolog = new Stomatolog() { StomatologID = 1 };
 
             using (var context = new OrdinacijaDBContext())
@@ -75,6 +98,7 @@ namespace StomatoloskaOrdinacija.ViewModel
                         if (z.PacijenIDuZahvatu.Equals(p.PacijentID)) Pacijenti.Add(p);
 
             }
+            //Parent.NavigationService.GoBack();
             return Pacijenti;
 
         }

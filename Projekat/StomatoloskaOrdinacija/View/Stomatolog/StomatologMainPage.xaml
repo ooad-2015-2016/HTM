@@ -41,7 +41,7 @@
                 <GradientStop Color="Black"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <RelativePanel x:Name="control" HorizontalAlignment="Center" Height="495" VerticalAlignment="Center" Width="1003" Grid.Column="1" >
+        <RelativePanel x:Name="control" HorizontalAlignment="Left" Height="495" VerticalAlignment="Top" Width="1003" Grid.Column="1" Margin="0,95,0,0" >
             <RelativePanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3387B8" Offset="0"/>
@@ -54,11 +54,15 @@
             <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="526,350,-311,-137" TextWrapping="Wrap" Text="pregled  termina" VerticalAlignment="Top" FontSize="20"/>
             <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="790,355,-575,-142" TextWrapping="Wrap" Text="lista pacijenata" VerticalAlignment="Top" FontSize="20"/>
             <Image x:Name="image" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="146" Margin="81,164,-204,-292" Source="ms-appx:///Icons/PopisOpreme.png"/>
-            <Image x:Name="image1" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="146" Margin="312,164,-458,-292" Source="ms-appx:///Icons/unosZahvata.png"/>
             <Image x:Name="image2" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="146" Margin="527,164,-673,-273" Source="ms-appx:///Icons/uvidTermina.png"/>
             <Button x:Name="button" Content="" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="130" Margin="790,164,-855,-260" Command="{Binding ListaPacijenataa, Source={StaticResource Stomatolog}}" CommandParameter="{x:Bind Stomatolog}" >
                 <Button.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/listaPacijenatav2.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="button1" Content="" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="126" Margin="312,164,-373,-260" Command="{Binding UnosZahvata, Source={StaticResource Stomatolog}}"  CommandParameter="{x:Bind Stomatolog}">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/unosZahvata.png"/>
                 </Button.Background>
             </Button>
         </RelativePanel>

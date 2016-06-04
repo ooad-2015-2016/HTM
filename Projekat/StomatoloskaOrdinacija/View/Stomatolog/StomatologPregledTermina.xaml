@@ -7,7 +7,46 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF321F38" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <GridView ItemsSource="{x:Bind Termini}" Margin="0,94,0,0" VerticalAlignment="Top" Height="450" HorizontalAlignment="Left" Width="800" Grid.Column="1">
+            <GridView.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF894242" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </GridView.Background>
+            <GridView.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel Height="108" Width="104">
+                        <!--<Image--><!--
+                        <TextBlock FontSize="16" Text="{x:Bind Datum}"/>
+                        <TextBlock FontSize="10" Text="{x:Bind Prezime}"/>-->
+                    </StackPanel>
+
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        
+        <!--<RelativePanel HorizontalAlignment="Left" Height="450" Margin="0,95,0,0" VerticalAlignment="Top" Width="900" Grid.Column="1">
+            <RelativePanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF230821"/>
+                    <GradientStop Color="#FF7E5B7B" Offset="1"/>
+                </LinearGradientBrush>
+            </RelativePanel.Background>
+        </RelativePanel>-->
 
     </Grid>
 </Page>

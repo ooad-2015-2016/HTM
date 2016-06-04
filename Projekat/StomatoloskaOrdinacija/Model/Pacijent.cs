@@ -16,6 +16,5 @@ namespace StomatoloskaOrdinacija.Model
         public Pacijent(string imePacijenta, string prezimePacijenta, DateTime datumRodjenjaPacijenta) : base(imePacijenta, prezimePacijenta, datumRodjenjaPacijenta) { }
         public Pacijent() { }
 
-
     }
 }

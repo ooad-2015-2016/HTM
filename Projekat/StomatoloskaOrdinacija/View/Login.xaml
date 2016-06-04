@@ -35,7 +35,7 @@
             <RelativePanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0E1F3C" Offset="1"/>
-                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFFFF3E9"/>
                 </LinearGradientBrush>
             </RelativePanel.Background>
             <TextBlock x:Name="textBlock" Height="50" TextWrapping="Wrap" Text="LOGIN" Width="116" Margin="179,35,0,-65" FontSize="36" SelectionChanged="textBlock_SelectionChanged" Foreground="#FF7E7E7E" HorizontalAlignment="Left" VerticalAlignment="Top"/>

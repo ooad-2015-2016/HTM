@@ -18,6 +18,6 @@ namespace StomatoloskaOrdinacija.Model
         public Stomatolog() { }
 
         public int StomatologID { get; set; }
-        
+
     }
 }

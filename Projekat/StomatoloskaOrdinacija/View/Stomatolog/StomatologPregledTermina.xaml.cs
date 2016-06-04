@@ -22,6 +22,7 @@ namespace StomatoloskaOrdinacija.View.Stomatolog
     /// </summary>
     public sealed partial class StomatologPregledTermina : Page
     {
+        public List<DateTimeOffset> Termini { get; set; }
         public StomatologPregledTermina()
         {
             this.InitializeComponent();

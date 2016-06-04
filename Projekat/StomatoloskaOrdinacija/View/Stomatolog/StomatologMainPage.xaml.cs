@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using StomatoloskaOrdinacija.Model;
+using StomatoloskaOrdinacija.ViewModel;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,8 +29,10 @@ namespace StomatoloskaOrdinacija.View.Stomatolog
         public StomatologMainPage()
         {
             this.InitializeComponent();
+            //DataContext = new ViewModel.StomatologVM();
+            NavigationCacheMode = NavigationCacheMode.Required;
 
-         }
+        }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -38,6 +42,8 @@ namespace StomatoloskaOrdinacija.View.Stomatolog
             {
                 Stomatolog = (Model.Stomatolog)e.Parameter;
             }
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
         }
     }
 

@@ -5,8 +5,13 @@
     xmlns:local="using:StomatoloskaOrdinacija.View.Recepcionar"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    
+    xmlns:model="using:StomatoloskaOrdinacija.ViewModel"
+        
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <model:RecepcionarMainPageVM x:Key="RecepcionarVM"/>
+    </Page.Resources>
 
     <Grid>
         <Grid.Background>
@@ -27,8 +32,6 @@
             </RelativePanel.Background>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="RECEPCIONAR" VerticalAlignment="Top" FontSize="48" Margin="346,47,-341,-47" Foreground="#FF3C1E10"/>
             <Image x:Name="image" HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="114" Margin="418,195,-531,-306" Source="ms-appx:///Icons/Naplata.png"/>
-            <Image x:Name="image1" HorizontalAlignment="Left" Height="171" VerticalAlignment="Top" Width="166" Margin="648,166,-814,-337" Source="ms-appx:///Icons/dodajPacijenta.png" Stretch="Fill"/>
-            <Image x:Name="image2" HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="114" Margin="184,195,-298,-306" Source="ms-appx:///Icons/Termin.png"/>
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="53" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Margin="205,339,-219,-372" FontSize="16">
             	<Run Text="Izmjena "/>
             	<LineBreak/>
@@ -40,6 +43,16 @@
             	<LineBreak/>
             	<Run Text="pacijenta"/>
             </TextBlock>
+            <Button x:Name="button" Content="" HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="114" Margin="179,195,-228,-274" Command="{Binding IzmjenaTerminaa, Source={StaticResource RecepcionarVM}}">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/Termin.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="button1" Content="" HorizontalAlignment="Left" Height="167" VerticalAlignment="Top" Width="157" Margin="656,165,-748,-300" Command="{Binding RegistrujPacijentaa, Source={StaticResource RecepcionarVM}}">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/DodajPacijenta.png"/>
+                </Button.Background>
+            </Button>
         </RelativePanel>
 
     </Grid>

@@ -53,8 +53,6 @@
             <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="322,345,-107,-132" TextWrapping="Wrap" Text="unos zahvata" VerticalAlignment="Top" FontSize="20"/>
             <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="526,350,-311,-137" TextWrapping="Wrap" Text="pregled  termina" VerticalAlignment="Top" FontSize="20"/>
             <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="790,355,-575,-142" TextWrapping="Wrap" Text="lista pacijenata" VerticalAlignment="Top" FontSize="20"/>
-            <Image x:Name="image" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="146" Margin="81,164,-204,-292" Source="ms-appx:///Icons/PopisOpreme.png"/>
-            <Image x:Name="image2" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="146" Margin="527,164,-673,-273" Source="ms-appx:///Icons/uvidTermina.png"/>
             <Button x:Name="button" Content="" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="130" Margin="790,164,-855,-260" Command="{Binding ListaPacijenataa, Source={StaticResource Stomatolog}}" CommandParameter="{x:Bind Stomatolog}" >
                 <Button.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/listaPacijenatav2.png"/>
@@ -63,6 +61,22 @@
             <Button x:Name="button1" Content="" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="126" Margin="312,164,-373,-260" Command="{Binding UnosZahvata, Source={StaticResource Stomatolog}}"  CommandParameter="{x:Bind Stomatolog}">
                 <Button.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/unosZahvata.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="button2" Content="" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="123" Margin="536,164,-594,-260" Command="{Binding PregledTerminaa, Source={StaticResource Stomatolog}}" CommandParameter="{x:Bind Stomatolog}">
+                <Button.BorderBrush>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/uvidTermina.png"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/uvidTermina.png"/>
+                </Button.Background>
+                <Button.Foreground>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/uvidTermina.png"/>
+                </Button.Foreground>
+            </Button>
+            <Button x:Name="button3" Content="" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="123" Margin="81,164,-139,-260" Command="{Binding ListaOpremee, Source={StaticResource Stomatolog}}">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Icons/PopisOpreme.png"/>
                 </Button.Background>
             </Button>
         </RelativePanel>

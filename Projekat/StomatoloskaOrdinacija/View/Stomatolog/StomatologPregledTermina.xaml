@@ -5,6 +5,7 @@
     xmlns:local="using:StomatoloskaOrdinacija.View.Stomatolog"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:m ="using:StomatoloskaOrdinacija.Model"
     mc:Ignorable="d">
 
     <Grid>
@@ -28,11 +29,11 @@
                 </LinearGradientBrush>
             </GridView.Background>
             <GridView.ItemTemplate>
-                <DataTemplate >
-                    <StackPanel Height="108" Width="104">
-                        <!--<Image--><!--
-                        <TextBlock FontSize="16" Text="{x:Bind Datum}"/>
-                        <TextBlock FontSize="10" Text="{x:Bind Prezime}"/>-->
+                <DataTemplate x:DataType="m:ZakazaniTermin">
+                    <StackPanel Height="108" Width="167">
+                        <!--<Image-->
+                        <TextBlock FontSize="16" Text="{x:Bind Termini}"/>
+                        <!--<TextBlock FontSize="10" Text="{x:Bind Prezime}"/>-->
                     </StackPanel>
 
                 </DataTemplate>

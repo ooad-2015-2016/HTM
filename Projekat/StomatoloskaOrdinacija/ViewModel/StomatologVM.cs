@@ -15,13 +15,37 @@ namespace StomatoloskaOrdinacija.ViewModel
         public Stomatolog Stomatolog { get; set; }
         public ICommand ListaPacijenataa { get; set; }
         public ICommand UnosZahvata { get; set; }
+        public ICommand PregledTerminaa { get; set; }
+        public ICommand ListaOpremee { get; set; }
         public INavigationService NavigationService { get; set; }
         public StomatologVM()
         {
-            ListaPacijenataa= new RelayCommand<object>(ListaPacijenata, MozeLiListaPacijenata);
+            PregledTerminaa = new RelayCommand<object>(PregledTermina, MozeLiPregledTermina);
+            ListaPacijenataa = new RelayCommand<object>(ListaPacijenata, MozeLiListaPacijenata);
             UnosZahvata= new RelayCommand<object>(Unos, MozeLiUnos);
+            ListaOpremee= new RelayCommand<object>(ListaOpreme, MozeLiListaOpreme);
             NavigationService = new NavigationService();
         }
+
+
+        public bool MozeLiListaOpreme(object parametar)
+        {
+            return true;
+        }
+        public void ListaOpreme(object parametar)
+        {
+            NavigationService.Navigate(typeof(StomatologPopisOpreme), parametar);
+        }
+
+        public bool MozeLiPregledTermina(object parametar)
+        {
+            return true;
+        }
+        public void PregledTermina(object parametar)
+        {
+            NavigationService.Navigate(typeof(StomatologPregledTermina), parametar);
+        }
+
         public bool MozeLiUnos(object parametar)
         {
             return true;

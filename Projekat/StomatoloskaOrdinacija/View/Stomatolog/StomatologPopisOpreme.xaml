@@ -5,9 +5,83 @@
     xmlns:local="using:StomatoloskaOrdinacija.View.Stomatolog"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:m ="using:StomatoloskaOrdinacija.Model"
+    xmlns:vm="using:StomatoloskaOrdinacija.ViewModel"
     mc:Ignorable="d">
+    <Page.Resources>
+        <vm:StomatologPopisOpremeVM x:Key="opremaVM"></vm:StomatologPopisOpremeVM>
+    </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF0A2934" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <GridView Name="gridView1" ItemsSource="{x:Bind ListaOpreme}" Margin="0,94,0,0" VerticalAlignment="Top" Height="450" HorizontalAlignment="Left" Width="416" Grid.Column="1" SelectedItem="{Binding Selektovanii, Source={StaticResource opremaVM}}" DataContext="{Binding ListaOpreme, Source={StaticResource opremaVM}}">
+            <GridView.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </GridView.Foreground>
+            <GridView.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF53539E" Offset="0"/>
+                    <GradientStop Color="#FFE2CDEC" Offset="1"/>
+                </LinearGradientBrush>
+            </GridView.Background>
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="m:Oprema">
+                    <StackPanel Height="108" Width="142">
+                        <!--<Image-->
+                        <TextBlock FontSize="16" Text="{x:Bind Naziv}"/>
+                        <TextBlock FontSize="10" Text="Količina: " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock FontSize="10" Text="{x:Bind Kolicina}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="45,-14,0,0"/>
+                    </StackPanel>
+
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        <GridView x:Name="gridView2" Grid.Column="1" HorizontalAlignment="Left" Margin="414,94,0,0" VerticalAlignment="Top" Width="374" Height="450">
+            <GridView.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </GridView.Foreground>
+            <GridView.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF53539E" Offset="0"/>
+                    <GradientStop Color="#FFE2CDEC" Offset="1"/>
+                </LinearGradientBrush>
+            </GridView.Background>
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Selektovana oprema" FontSize="36" Margin="20,0,0,0" Foreground="#FF31223A"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="{Binding Naziv, Source={StaticResource opremaVM}}"/>
+            <TextBlock x:Name="textBlock2" TextWrapping="Wrap">
+            	<Run Text="stanje količne"/>
+            	<Run Text=":"/>
+            </TextBlock>
+            <TextBox x:Name="textBox" TextWrapping="Wrap" Text="{Binding Kolicina, Mode=TwoWay, Source={StaticResource opremaVM}}" Width="124"/>
+        </GridView>
+        <!--<Grid HorizontalAlignment="Left" Height="450" Margin="0,95,0,0" VerticalAlignment="Top" Width="900" Grid.Column="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF042236" Offset="0"/>
+                    <GradientStop Color="#FFC0A8C7" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            -->
+        <!--<TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="278,37,0,0" TextWrapping="Wrap" Text="POPIS OPREME" VerticalAlignment="Top" FontSize="48" Foreground="#FF1F1F1F"/>-->
+        <!--
+        </Grid>-->
 
     </Grid>
 </Page>

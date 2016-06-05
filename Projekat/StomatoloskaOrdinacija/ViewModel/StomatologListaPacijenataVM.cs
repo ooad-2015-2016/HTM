@@ -33,13 +33,6 @@ namespace StomatoloskaOrdinacija.ViewModel
             NavigationService = new NavigationService();
             //Parent = new StomatologVM();     
         }
-        public StomatologListaPacijenataVM(StomatologVM trenutniStomatologVM)
-        {
-            Parent = trenutniStomatologVM;
-            Prikazii = new RelayCommand<object>(Prikazi, MozeLiSePrikazati);
-            Pacijenti = new List<Pacijent>();
-            NavigationService = new NavigationService();
-        }
 
 
         public bool MozeLiBack(object parametar)

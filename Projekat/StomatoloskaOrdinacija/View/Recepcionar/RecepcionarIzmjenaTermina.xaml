@@ -5,9 +5,39 @@
     xmlns:local="using:StomatoloskaOrdinacija.View.Recepcionar"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:m ="using:StomatoloskaOrdinacija.Model"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF191942" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <GridView ItemsSource="{x:Bind Termini}" Margin="0,95,0,0" VerticalAlignment="Top" Height="450" HorizontalAlignment="Left" Width="800" Grid.Column="1">
+            <GridView.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF35336A" Offset="0.004"/>
+                    <GradientStop Color="#FFAAA8D4" Offset="1"/>
+                </LinearGradientBrush>
+            </GridView.Background>
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="m:ZakazaniTermin">
+                    <StackPanel Height="108" Width="167">
+                        <!--<Image-->
+                        <TextBlock FontSize="16" Text="{x:Bind Termini}"/>
+                        <!--<TextBlock FontSize="10" Text="{x:Bind Prezime}"/>-->
+                    </StackPanel>
+
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
 
     </Grid>
 </Page>

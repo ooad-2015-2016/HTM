@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,9 +23,37 @@ namespace StomatoloskaOrdinacija.View.Recepcionar
     /// </summary>
     public sealed partial class RecepcionarIzmjenaTermina : Page
     {
+        public List<Model.ZakazaniTermin> Termini { get; set; }
         public RecepcionarIzmjenaTermina()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested -= ThisPage_BackRequested;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+
+            //Termini = new ViewModel.StomatologPregledTerminaVM().VratiSveTermine(TrenutniStomatolog);
+            Termini = new ViewModel.RecepcionarIzmjenaTerminaVM().VratiSveTermine();
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+
+        }
+
+        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            if (Frame.CanGoBack) { Frame.GoBack(); e.Handled = true; }
         }
     }
 }

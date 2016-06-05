@@ -38,6 +38,23 @@
                     <GradientStop Color="#FFFFF3E9"/>
                 </LinearGradientBrush>
             </RelativePanel.Background>
+            <Button Name="MyFlyoutButton"
+                Margin="188,486,-168,-466"
+                Grid.Row="3" 
+                Grid.Column="1" 
+                Content="Help">
+                <Button.Flyout>
+                    <Flyout x:Name="MyFlyout">
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
+                            <TextBlock Text="Admin dodjeljuje username i pw korisnicima.." Margin="0,0,0,10" />
+                            <Button Name="InnerFlyoutButton" 
+                                HorizontalAlignment="Right" 
+                                Content="OK" Click="InnerFlyoutButton_Click" 
+                                 />
+                        </StackPanel>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
             <TextBlock x:Name="textBlock" Height="50" TextWrapping="Wrap" Text="LOGIN" Width="116" Margin="179,35,0,-65" FontSize="36" SelectionChanged="textBlock_SelectionChanged" Foreground="#FF7E7E7E" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox Text="{Binding Username, Mode=TwoWay}" x:Name="textBox" Height="32" TextWrapping="Wrap" Margin="123,130,-75,-130" PlaceholderText="Username" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213"/>
             <PasswordBox x:Name="PasswordBox" ff:PasswordBoxAssistant.BindPassword="true"  ff:PasswordBoxAssistant.BoundPassword="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="123,186,-60,-186" PlaceholderText="**********" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213"/>

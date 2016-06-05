@@ -5,9 +5,44 @@
     xmlns:local="using:StomatoloskaOrdinacija.View.Recepcionar"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:us="using:StomatoloskaOrdinacija.ViewModel"
     mc:Ignorable="d">
+    <Page.Resources>
+        <us:RecepcionarRegistracijaPacijentaVM x:Key="RegistracijaPacijenta"/>
+    </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF3B2947" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <RelativePanel HorizontalAlignment="Left" Height="430" Margin="0,94,0,0" VerticalAlignment="Top" Width="900" Grid.Column="1">
+            <RelativePanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF140B23" Offset="0"/>
+                    <GradientStop Color="#FF9C7070" Offset="1"/>
+                </LinearGradientBrush>
+            </RelativePanel.Background>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Prezime" VerticalAlignment="Top" Width="62" Margin="347,85,-347,-85"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Ime" VerticalAlignment="Top" Width="62" Margin="142,89,-142,-89"/>
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Datum rođenja" VerticalAlignment="Top" Width="116" Margin="622,89,-676,-89"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="{Binding Ime, Mode=TwoWay, Source={StaticResource RegistracijaPacijenta}}" VerticalAlignment="Top" Width="150" Margin="88,134,-167,-134"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="{Binding Prezime, Mode=TwoWay, Source={StaticResource RegistracijaPacijenta}}" VerticalAlignment="Top" Width="150" Margin="308,134,-387,-134"/>
+            <DatePicker HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="296" Margin="531,134,-531,-134" Date="{Binding DatumRodjenja, Source={StaticResource RegistracijaPacijenta}}"/>
+            <CheckBox x:Name="checkBox" Content="Korisnik mobilne aplikacije ?" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="236" Margin="329,208,-445,-208" Checked="checkBox_Checked" Unchecked="checkBox_Unchecked"/>
+            <Button x:Name="button" Content="Unesi pacijenta" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="152" Margin="372,388,-459,-388" Command="{Binding RegistrujPacijentaa, Source={StaticResource RegistracijaPacijenta}}"/>
+            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="{Binding Username, Mode=TwoWay, Source={StaticResource RegistracijaPacijenta}}" VerticalAlignment="Top" Width="150" Margin="259,266,-338,-266" PlaceholderText="Username" Visibility="Collapsed"/>
+            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="{Binding Password, Mode=TwoWay, Source={StaticResource RegistracijaPacijenta}}" VerticalAlignment="Top" Width="151" Margin="494,266,-574,-266" PlaceholderText="Password" Visibility="Collapsed"/>
+            <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="71" Visibility="Collapsed"/>
+            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="112" Margin="678,245,-726,-245" ItemsSource="{Binding StatusiPacijenata, Source={StaticResource RegistracijaPacijenta}}" SelectedItem="{Binding StatusPacijenta, Source={StaticResource RegistracijaPacijenta}}"/>
+        </RelativePanel>
 
     </Grid>
 </Page>

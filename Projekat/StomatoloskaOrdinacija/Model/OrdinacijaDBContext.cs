@@ -24,10 +24,9 @@ namespace StomatoloskaOrdinacija.Model
         public DbSet<ZakazaniTermin> ZakazaniTermini { get; set; }
 
 
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dataBaseFilePath = "Ordinacija21.db";
+            string dataBaseFilePath = "Ordinacija22.db";
             try
             {
                 dataBaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, dataBaseFilePath);

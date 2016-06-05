@@ -131,8 +131,12 @@
     <Compile Include="ViewModel\AdminVM.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\PacijentVM.cs" />
+    <Compile Include="ViewModel\RecepcionarIzmjenaTerminaVM.cs" />
+    <Compile Include="ViewModel\RecepcionarMainPageVM.cs" />
+    <Compile Include="ViewModel\RecepcionarRegistracijaPacijentaVM.cs" />
     <Compile Include="ViewModel\RecepcionarVM.cs" />
     <Compile Include="ViewModel\StomatologListaPacijenataVM.cs" />
+    <Compile Include="ViewModel\StomatologPopisOpremeVM.cs" />
     <Compile Include="ViewModel\StomatologPregledTerminaVM.cs" />
     <Compile Include="ViewModel\StomatologUnosZahvataVM.cs" />
     <Compile Include="ViewModel\StomatologVM.cs" />

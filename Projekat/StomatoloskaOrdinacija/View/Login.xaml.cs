@@ -29,6 +29,10 @@ namespace StomatoloskaOrdinacija.View
             this.InitializeComponent();  
 
         }
+        private void InnerFlyoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            MyFlyout.Hide();
+        }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {

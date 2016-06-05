@@ -115,8 +115,6 @@ namespace StomatoloskaOrdinacija.ViewModel
                 context.Stomatolozi.AddRange(tmpStomatolog);
                 await context.SaveChangesAsync();
 
-                //var dialog = new MessageDialog("Stomatolog je u bazi..");
-                //await dialog.ShowAsync();
             }
 
         }

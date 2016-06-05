@@ -1,0 +1,66 @@
+Initialize engine version: 5.3.4f1 (fdbb5133b820)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: ATI Radeon HD 4800 Series (ID=0x9442)
+    Vendor:   ATI
+    VRAM:     1401 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.160 seconds
+Platform assembly: C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\AdnaN\Documents\OOADGAME\Bakterija_Data\Managed\System.dll (this message is harmless)
+WARNING: Shader Unsupported: 'Hidden/Internal-DeferredShading' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Hidden/Internal-DeferredShading' - Setting to default shader.
+WARNING: Shader Unsupported: 'Hidden/Internal-DeferredReflections' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Hidden/Internal-DeferredReflections' - Setting to default shader.
+WARNING: Shader Unsupported: 'Hidden/Internal-PrePassLighting' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Hidden/Internal-PrePassLighting' - Setting to default shader.
+WARNING: Shader Unsupported: 'Legacy Shaders/VertexLit' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Legacy Shaders/VertexLit' - Setting to default shader.
+WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - Pass 'FORWARD' has no vertex shader
+WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - Pass 'FORWARD' has no vertex shader
+WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - Pass 'PREPASS' has no vertex shader
+WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - Pass 'PREPASS' has no vertex shader
+WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - Pass 'DEFERRED' has no vertex shader
+WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - All passes removed
+desktop: 1680x1050 60Hz; virtual: 1680x1050 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+WARNING: Shader Unsupported: 'Standard' - Pass 'FORWARD' has no vertex shader
+WARNING: Shader Unsupported: 'Standard' - Pass 'FORWARD_DELTA' has no vertex shader
+WARNING: Shader Unsupported: 'Standard' - Pass 'SHADOWCASTER' has no vertex shader
+WARNING: Shader Unsupported: 'Standard' - All passes removed
+WARNING: Shader Unsupported: 'Standard' - Pass 'FORWARD' has no vertex shader
+WARNING: Shader Unsupported: 'Standard' - Pass 'FORWARD_DELTA' has no vertex shader
+WARNING: Shader Unsupported: 'Standard' - Pass 'SHADOWCASTER' has no vertex shader
+WARNING: Shader Unsupported: 'Standard' - Pass 'DEFERRED' has no vertex shader
+WARNING: Shader Unsupported: 'Standard' - All passes removed
+UnloadTime: 0.741701 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.866764 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 244.
+Total: 0.131207 ms (FindLiveObjects: 0.017349 ms CreateObjectMapping: 0.017711 ms MarkObjects: 0.090363 ms  DeleteObjects: 0.005421 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.474226 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 244.
+Total: 0.099761 ms (FindLiveObjects: 0.011927 ms CreateObjectMapping: 0.015181 ms MarkObjects: 0.067230 ms  DeleteObjects: 0.005060 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: d34 -> priority: 1 

@@ -1,0 +1,2 @@
+Dijagram Rasporedjivanja Paketa Komponenti nije tek sad dodan on je i prije bio tu u folderu "HTM/Dijagram Sekvenci/ZakazivanjeDirektno.vpp"
+,ali zbog preglednosti je premješten u novi folder.
